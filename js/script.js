@@ -191,4 +191,18 @@
     $(".preloader").fadeOut("slow");
   })
 
+
 })(jQuery);
+
+
+// ===== Custom hamburger toggle for mobile nav =====
+document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.querySelector(".hamburger");
+  const menu = document.querySelector("#navbar .menu-list");
+
+  if (hamburger && menu) {
+    hamburger.addEventListener("click", function() {
+      menu.classList.toggle("active");
+    });
+  }
+});
