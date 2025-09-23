@@ -2701,3 +2701,37 @@ body.no-scroll { overflow: auto !important; }
   #posters .section-title { font-size: clamp(26px, 7vw, 34px); line-height: 1.1; }
   #posters .sub-title     { margin-top: 6px; font-size: 14px; }
 }
+
+/* Use Stellarnav's own mobile toggle; hide the custom hamburger */
+@media (max-width: 991px) {
+  /* SHOW plugin toggle (undo any earlier hide) */
+  #header .stellarnav .menu-toggle,
+  #header .stellarnav .menu-toggle * {
+    display: unset !important;   /* let the plugin's CSS control it */
+  }
+
+  /* HIDE our custom hamburger so there's only one button */
+  #header .hamburger { 
+    display: none !important;
+  }
+}
+
+/* Make sure the plugin toggle looks like a button, not a solid line */
+#header .stellarnav .menu-toggle {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+}
+/* Ensure the right-column "Posters" label shows clearly */
+#publications .sub-title {
+  display: block;
+  margin: 6px 0 10px;
+  color: var(--accent-color);                 /* readable on white */
+}
+
+/* When stacked on mobile, add a bit of space before the second column */
+@media (max-width: 991px) {
+  #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
+  #publications .pub-col + .pub-col { margin-top: 0; } /* rely on gap */
+}
