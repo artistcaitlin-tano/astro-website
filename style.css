@@ -2912,7 +2912,52 @@ body.no-scroll { overflow: auto !important; }
   body.menu-open { overflow: hidden; }
 }
 
+/* Use our hamburger + the template's 'responsive' class */
+@media (max-width: 991px) {
+  /* Hide Stellarnav's built-in "MENU" toggle so there's only one button */
+  #header .stellarnav .menu-toggle { display: none !important; }
+
+  /* Our hamburger visible on mobile */
+  .hamburger {
+    display: flex !important;
+    width: 28px; height: 22px;
+    flex-direction: column; justify-content: space-between;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .hamburger .bar {
+    height: 3px; width: 100%;
+    background: var(--accent-color, #1c3b34);
+    border-radius: 2px;
+  }
+
+  /* Menu panel hidden by default… */
+  #mainMenu {
+    display: none;
+    position: fixed;
+    top: 64px;               /* adjust to your header height if needed */
+    left: 0; right: 0;
+    background: var(--background-color, #fff);
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    z-index: 2000;
+  }
+  /* …and shown when JS adds .responsive */
+  #mainMenu.responsive { display: flex; }
+
+  /* Clean vertical list */
+  #mainMenu > li > a { display: block; padding: 10px 0; }
+
+  /* Optional: prevent page from scrolling when menu is open */
+  body.menu-open { overflow: hidden; }
+}
+
 /* Hide our hamburger on desktop */
+@media (min-width: 992px) {
+  .hamburger { display: none !important; }
+}
 
 
 
