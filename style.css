@@ -2831,3 +2831,21 @@ body.no-scroll { overflow: auto !important; }
     height: auto;          /* natural height on mobile */
   }
 }
+
+/* Mobile menu behavior with custom hamburger */
+@media (max-width: 991px) {
+  #navbar .menu-list {
+    display: none;                /* hidden by default */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;  /* adjust to sit just under your header */
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  #navbar .menu-list.active {
+    display: flex;                /* visible when toggled */
+  }
+}
