@@ -2783,3 +2783,52 @@ body.no-scroll { overflow: auto !important; }
   #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
 }
 
+/* --- Billboard alignment + spacing fix --- */
+#billboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;   /* text + image same height */
+  margin: 0;              /* kill outside gap */
+  padding: 0;             /* kill inside gap */
+}
+
+/* Text column: align like Publications/Talks */
+#billboard .banner-content {
+  flex: 0 0 40%;          /* keep 40/60 split on desktop */
+  max-width: 40%;
+  padding: 2rem;          /* spacing inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;       /* ✅ left-align text */
+}
+
+/* Image column */
+#billboard .banner-holder {
+  flex: 0 0 60%;
+  max-width: 60%;
+  margin: 0;              /* remove gaps */
+}
+
+#billboard .banner-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fill without distortion */
+  display: block;
+  margin: 0;              /* remove gaps */
+}
+
+/* --- Mobile: stack cleanly, no white space --- */
+@media (max-width: 991px) {
+  #billboard .banner-content,
+  #billboard .banner-holder {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1.2rem;       /* smaller padding for phones */
+  }
+
+  #billboard .banner-holder img {
+    height: auto;          /* natural height on mobile */
+  }
+}
+
