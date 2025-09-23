@@ -49,26 +49,34 @@
   }
 
   // Responsive Navigation with Button
-  var initHamburgerMenu = function() {
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".menu-list");
+var initHamburgerMenu = function() {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu   = document.querySelector("#mainMenu"); // use the id we set
 
-    hamburger.addEventListener("click", mobileMenu);
+  if (!hamburger || !navMenu) return; // nothing to do
 
-    function mobileMenu() {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("responsive");
-    }
+  hamburger.addEventListener("click", mobileMenu);
 
-    const navLink = document.querySelectorAll(".nav-link");
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("responsive");
+    // (optional) lock body scroll when open
+    document.body.classList.toggle("menu-open", navMenu.classList.contains("responsive"));
+  }
 
-    navLink.forEach(n => n.addEventListener("click", closeMenu));
+  const navLink = document.querySelectorAll(".nav-link");
+  navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-    function closeMenu() {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("responsive");
-    }
-  };
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("responsive");
+    document.body.classList.remove("menu-open");
+  }
+};
+
+// ✨ make sure it actually runs
+document.addEventListener("DOMContentLoaded", initHamburgerMenu);
+
   
   // init jarallax parallax
   var initJarallax = function() {
@@ -196,4 +204,5 @@
 
 
 document.addEventListener('DOMContentLoaded', initHamburgerMenu);
+
 
