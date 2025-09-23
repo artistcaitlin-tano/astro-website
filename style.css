@@ -2749,3 +2749,37 @@ body.no-scroll { overflow: auto !important; }
 #header .btn-search {
   display: none !important;
 }
+/* --- MOBILE NAV: keep only the icon hamburger, kill Stellarnav's "MENU" --- */
+@media (max-width: 1200px) {
+  /* Hide Stellarnav's mobile toggle completely (this is the one that shows "MENU") */
+  .stellarnav .menu-toggle { display: none !important; }
+
+  /* Show *your* hamburger icon button */
+  header .hamburger {
+    display: flex !important;
+    align-items: center;
+    gap: 0;
+    background: transparent;      /* no background block */
+    padding: 10px;
+    z-index: 1001;
+  }
+  header .hamburger .bar {
+    background-color: var(--accent-color); /* make sure bars are visible */
+    height: 3px;
+    width: 24px;
+  }
+}
+
+/* --- Remove the search button entirely (no space wasted) --- */
+#header .btn-search { display: none !important; }
+
+/* --- Make sure Publications' right-column heading "Posters" always shows --- */
+#publications .sub-title {
+  display: block !important;
+  margin: 6px 0 12px !important;
+  color: var(--accent-color);
+}
+@media (max-width: 991px) {
+  #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
+}
+
