@@ -1680,20 +1680,6 @@ header .hamburger .bar {
     border: 1px solid #d0d3b9;
 }
 
-
-/*----- Billboard
---------------------------------------------------------------*/
-#billboard .slider-item {
-    display: flex;
-}
-#billboard .banner-content {
-    width: 40%;
-    padding: 195px 0 80px 170px;
-    position: relative;
-}
-#billboard .banner-element {
-    width: 80%;
-}
 .banner-content h2.banner-title {
     font-size: 3.8em;
     line-height: 1.2;
@@ -1701,12 +1687,7 @@ header .hamburger .bar {
     color: #053634;
     text-transform: capitalize;
 }
-#billboard .banner-content p {
-    margin-bottom: 15px;
-}
-#billboard .banner-holder {
-    width: 60%;
-}
+
 .main-slider .slick-dots {
     position: absolute;
     flex-wrap: wrap;
@@ -1747,45 +1728,17 @@ header .hamburger .bar {
     opacity: 1;
 }
 
-@media only screen and (max-width: 1340px) {
-  #billboard .banner-content {
-      padding: 80px 0 80px 80px;
-  }
-}
 @media only screen and (max-width: 999px) {
-  #billboard .slider-item {
-      flex-wrap: wrap;
-      flex-direction: column-reverse;
-  }
   .main-slider .slick-dots {
       top: 100px;
   }
   img.banner-image {
       height: 500px;
   }
-  #billboard .banner-content {
-      width: 100%;
-      margin-bottom: 30px;
-  }
-  #billboard .banner-holder {
-      width: 100%;
-  }
-}
 
 @media only screen and (max-width: 699px) {
-  #billboard .slider-item {
-      flex-wrap: wrap;
-  }
-  #billboard .banner-content {
-      width: 100%;
-      padding: 80px 0 80px 30px;
-      margin-left: 0;
-  }
   .banner-content h2.banner-title {
       font-size: 2.3em;
-  }
-  #billboard .banner-holder {
-      margin-left: 0;
   }
   .main-slider .slick-dots {
       bottom: 545px;
@@ -2831,4 +2784,5 @@ body.no-scroll { overflow: auto !important; }
     height: auto;          /* natural height on mobile */
   }
 }
+
 
