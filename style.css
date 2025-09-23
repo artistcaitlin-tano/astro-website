@@ -2735,3 +2735,17 @@ body.no-scroll { overflow: auto !important; }
   #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
   #publications .pub-col + .pub-col { margin-top: 0; } /* rely on gap */
 }
+
+/* Make Stellarnav toggle icon-only */
+.stellarnav .menu-toggle span {
+  display: none; /* hides "MENU" text */
+}
+
+.stellarnav .menu-toggle i {
+  font-size: 22px; /* adjust icon size if needed */
+  line-height: 1;
+}
+/* Hide search button */
+#header .btn-search {
+  display: none !important;
+}
