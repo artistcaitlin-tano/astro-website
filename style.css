@@ -2634,3 +2634,63 @@ html {
 body, html { overflow-y: auto !important; }
 body.no-scroll { overflow: auto !important; }
 
+
+/* =========================
+   MOBILE POLISH PACK
+   (paste at end of style.css)
+   ========================= */
+
+/* Global: kill any sideways scroll + tame big paddings */
+@media (max-width: 991px) {
+  html, body { overflow-x: hidden !important; }
+  section.padding-large { padding-top: 40px; padding-bottom: 40px; }
+  section.padding-medium { padding-top: 32px; padding-bottom: 32px; }
+  section.padding-small { padding-top: 24px; padding-bottom: 24px; }
+}
+
+/* Header: keep logo + text tidy; hide extra badges in dropdowns */
+@media (max-width: 991px) {
+  .main-logo { gap: 8px; }
+  .main-logo img { height: 48px; width: auto; }
+  .main-logo .logo-text { font-size: 14px; white-space: nowrap; }
+  #header .stellarnav ul ul li > a.menu-split .orcid-btn { display: none; } /* optional */
+}
+
+/* Hero (billboard): stack, equalize, and shrink headline a touch */
+@media (max-width: 991px) {
+  #billboard { flex-direction: column; align-items: stretch; min-height: 0; }
+  #billboard .banner-content { flex: 0 0 auto; max-width: none; width: 100%; padding: 24px; }
+  #billboard .banner-holder { flex: 0 0 auto; width: 100%; }
+  #billboard .banner-holder img { width: 100%; height: auto; object-fit: cover; }
+  #billboard .banner-title { font-size: 36px; line-height: 1.1; }
+}
+
+/* Publications & Talks: align like desktop, but reduce the inset on mobile */
+@media (max-width: 991px) {
+  #publications, #talks { padding-left: 1rem; }
+  .pub-title-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .view-btn { margin-top: 4px; }
+}
+
+/* Posters grid: 1 per row on phones, keep tiles steady, text compact */
+@media (max-width: 767px) {
+  #posters .col-sm-6, #posters .col-md-4 { width: 100%; flex: 0 0 100%; max-width: 100%; }
+  #posters .poster-thumb { aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden; }
+  #posters .poster-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  #posters .poster-overlay { padding: 8px 10px; }
+  .poster-title { font-size: 13px; line-height: 1.25; margin: 0 0 3px; }
+  .poster-citation { font-size: 11px; line-height: 1.25; }
+}
+
+/* Footer: slim bottom bar */
+@media (max-width: 991px) {
+  #footer-bottom { padding-top: 8px; padding-bottom: 8px; }
+  #footer-bottom p { margin: 0; }
+}
+
+/* Safety: never let random wide children overflow on small screens */
+@media (max-width: 991px) {
+  .container, .row, section { overflow-x: hidden; }
+}
+
+
