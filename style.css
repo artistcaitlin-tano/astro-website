@@ -2159,630 +2159,268 @@ footer#footer {
   border-radius: 4px;
 }
 
-/* ===== Publications section layout ===== */
+/* =========================================================
+   Caitlin — Clean Style Sheet (desktop preserved, mobile fixed)
+   ========================================================= */
 
+/* ----- global safety ----- */
+html, body { max-width: 100%; overflow-x: hidden; }
 
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
 
-#publications .pub-item p {
-  margin: 0;
-}
+/* hide the search button (no site search) */
+#header .btn-search { display: none !important; }
 
-/* Make columns stack on tablets/phones */
-@media only screen and (max-width: 991px) {
-  #publications .pub-grid {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
-/* --- Publications: make subheads match "Publications" font but smaller --- */
-#publications .sub-title {
-  font-family: var(--heading-font, "Raleway", Arial, sans-serif);
-  font-weight: 800;             /* same visual weight as big section headers */
-  text-transform: uppercase;    /* matches the theme's section-title look */
-  letter-spacing: 0.08em;       /* subtle tracking like the main title */
-  font-size: clamp(18px, 2vw, 22px); /* smaller than "Publications" */
-  margin: 0 0 12px 0;
-}
-/* --- Publications: tighten citation line spacing --- */
-#publications .pub-citation {
-  line-height: 1.3;   /* single-ish spacing */
-  margin: 0;          /* remove extra paragraph margin */
-}
-#publications {
-  position: relative;
-  padding-left: 2em; /* match Services/Testimonial inset */
-}
-
-
-/* If the theme applies big spacing to <p> globally, this keeps it tight here */
-#publications .pub-item p + br {
-  line-height: 0;     /* ensure <br> doesn't expand spacing */
-}
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;  /* prevents sideways scrolling */
-}
-
-/* === Billboard (40/60 split, equal height, mobile-safe) === */
-#billboard {
-  display: flex;
-  flex-wrap: wrap;        /* stacks on small screens */
-  align-items: stretch;   /* make both columns equal height */
-  min-height: 400px;      /* adjust as needed */
-}
-
-#billboard .banner-content {
-  flex: 0 0 40%;          /* text takes 40% */
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;/* vertically center text */
-}
-
-#billboard .banner-holder {
-  flex: 0 0 60%;          /* image takes 60% */
-  position: relative;     /* allows overlay positioning */
-}
-
-#billboard .banner-holder img {
-  width: 100%;
-  height: 100%;           /* match height to text column */
-  object-fit: cover;      /* crop nicely */
-  display: block;
-}
-
-/* Overlay marker + text in top right */
-#billboard .image-overlay {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-#billboard .marker-icon {
-  max-width: 12px;
-  max-height: 12px;
-  width: auto;
-  height: auto;
-  display: block;
-}
-
-
-#billboard .marker-text {
-  color: #fff;            /* white text */
-  font-weight: 600;
-  font-size: 14px;
-  font-family: var(--heading-font, "Raleway", sans-serif);
-}
-
-/* Mobile: stack text and image */
-@media (max-width: 991px) {
-  #billboard .banner-content,
-  #billboard .banner-holder {
-    flex: 0 0 100%;
-  }
-  #billboard .banner-holder img {
-    height: auto;
-  }
-  #billboard .image-overlay {
-    top: 10px;
-    right: 10px;
-  }
-}
-/* Control main logo size */
-.main-logo img {
-  max-height: 80px;   /* adjust height */
-  width: auto;        /* keep proportions */
-}
-/* Talks: use the same font/metrics as Publications' author line */
-#talks .talk-citation {
-  font-family: var(--body-font); /* Raleway */
-  font-size: 18px;               /* same as body base */
-  font-weight: 300;              /* same as body */
-  line-height: 1.3;              /* single-spaced like Publications */
-  margin: 0;
-}
-#talks {
-  position: relative;
-  padding-left: 2em; /* align with Publications */
-}
-
-
-
-/* ORCID button inline with Papers */
-#publications .sub-title {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-#publications .orcid-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: var(--background-color); /* current fill color */
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-decoration: none;
-  white-space: nowrap;
-  line-height: 1;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-
-  border: 2px solid var(--accent-color); /* ✅ outline in darker green */
-}
-
-
-
-#publications .orcid-btn:hover {
-  background-color: var(--accent-color);  /* dark hover, matches site style */
-}
-
-#publications .orcid-icon {
-  height: 14px;   /* small, proportional */
-  width: auto;
-  display: block;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* dropdown width matches parent menu item (nice alignment) */
 #header .stellarnav li.has-sub > ul {
-  min-width: inherit; 
+  min-width: 100%;
   width: 100%;
+  box-sizing: border-box;
 }
 
-/* Make dropdown row split: text left, ORCID badge right */
+/* "Papers" item with badge split: text left, badge right */
 #header .stellarnav ul ul li > a.menu-split {
-  display: flex !important;           /* override template's display:block */
-  justify-content: space-between;     /* pushes children to edges */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;                        /* anchor fills the row */
-  gap: 12px;                          /* small breathing room */
+  width: 100%;
+  gap: 12px;
 }
-
-/* Keep the badge styling you already made */
 #header .stellarnav ul ul li > a.menu-split .orcid-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background-color);
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 2px solid var(--accent-color);
-  line-height: 1;
-}
-
-#header .stellarnav ul ul li > a.menu-split .orcid-icon {
-  width: auto;
-  height: 14px;
-  display: block;
-}
-
-
-
-/* Keep text and ORCID logo inline */
-/* Dropdown menu link with split alignment */
-.menu-split {
-  display: flex;
-  justify-content: space-between; /* push text left, badge right */
-  align-items: center;
-  gap: 12px; /* small space so text doesn’t touch badge */
-}
-
-/* ORCID badge (reuse your earlier style) */
-.menu-split .orcid-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--background-color);
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 2px solid var(--accent-color);
-  line-height: 1;
-}
-
-.menu-split .orcid-btn .orcid-icon {
-  width: auto;
-  height: 14px;
-  display: block;
-}
-
-
-/* === Posters hero: background + centered title + edge triangles === */
-#billboard.poster-hero{
-  position: relative;
-  width: 100%;
-  min-height: 600px; /* tweak height */
-  background: url("images/mcdonald_banner.jpeg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* keep triangles inside */
-}
-
-/* Posters hero: pin title at the bottom center */
-#billboard.poster-hero {
-  position: relative;  /* context for absolute positioning */
-  display: flex;
-  justify-content: center;
-  align-items: stretch; /* let children fill height */
-}
-
-#billboard.poster-hero .banner-content {
-  position: absolute;
-  bottom: 15px;        /* adjust closer/farther from bottom */
-  left: 50%;
-  transform: translateX(-50%); /* center horizontally */
-  text-align: center;
-}
-
-#billboard.poster-hero .banner-title {
-  color: #fff;
-  margin: 0;
-}
-
-
-/* === Posters hero: right triangles in the bottom corners === */
-#billboard.poster-hero::before,
-#billboard.poster-hero::after{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  background: transparent !important;
-  transform: none !important;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Bottom-left: right triangle */
-#billboard.poster-hero::before{
-  right: 0;
-  /* adjust sizes: first = horizontal leg, second = vertical leg */
-  border-right: 140px solid var(--triangle-color, #F0B310); /* yellow */
-  border-top:   140px solid transparent;
-}
-
-/* Bottom-right: right triangle */
-#billboard.poster-hero::after{
-  left: 0;
-  border-left: 140px solid var(--triangle-color, #F0B310);  /* yellow */
-  border-top:  140px solid transparent;
-}
-
-.main-logo {
-  display: flex;
-  align-items: center;  /* vertical centering */
-}
-
-
-.main-logo .logo-text {
-  margin-left: 10px;
-  white-space: nowrap;  /* 🔑 prevents text from wrapping */
-  font-family: var(--heading-font, "Raleway", sans-serif);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  font-size: 16px;
-  color: var(--accent-color);
-}
-
-
-#posters {
   background: var(--background-color);
-}
-
-#posters .section-header {
-  margin-top: 0;         /* remove container top margin */
-  padding-top: 10px;     /* optional: add a little breathing room */
-}
-
-#posters .sub-title {
-  margin-top: -20px; /* nudge it upward */
-}
-
-/* Poster tiles with always-visible overlay */
-.poster-item {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Keep poster boxes steady even when image scales on hover */
-#posters .poster-thumb {
-  position: relative;
-  overflow: hidden;     
-  width: 100%;
-  aspect-ratio: 4 / 3;    /* wider ratio: try 4/3 instead of 3/4 */
-  border-radius: 8px;     /* rounded corners on the box */
-}
-
-
-#posters .poster-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-
-#posters .poster-thumb:hover img {
-  transform: scale(1.05); /* zoom effect on hover */
-}
-
-/* hover state: swap colors */
-#posters .poster-thumb:hover .poster-overlay {
-  background: var(--background-color); /* light overlay */
-  color: #111; /* dark text */
-}
-
-/* Overlay is fixed at bottom of image */
-#posters .poster-overlay {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  background: #053634CC;      /* default dark bar */
-  color: var(--background-color);       /* default light text */
-  padding: 10px 12px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  transition: background-color 0.35s ease, color 0.35s ease;
-}
-
-#posters .poster-overlay * {
-  color: inherit; /* child elements follow overlay color */
-}
-
-/* Overlay text (compact citation style) */
-.poster-title {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 0 0 4px 0;
-}
-
-.poster-citation {
-  font-size: 12px;
-  line-height: 1.3;
-  margin: 0;
-  font-weight: 400;
-}
-
-/* Hover state: swap background and text colors */
-#posters .poster-thumb:hover .poster-overlay {
-  background: #f0f1EACC; /* light overlay */
-  color: var(--accent-color);          /* dark text */
-}
-
-/* Small inline "View" tag button */
-.view-btn {
-  display: inline-block;
-  padding: 2px 8px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  padding: 2px 6px;
   border-radius: 4px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  line-height: 1.4;
-  transition: all 0.25s ease;
-  margin-top: 0px; /* space above if placed under citation */
+  border: 2px solid var(--accent-color);
+  line-height: 1;
+}
+#header .stellarnav ul ul li > a.menu-split .orcid-icon {
+  width: 14px; height: 14px; display: block;
 }
 
-/* Hover effect: invert colors */
-.view-btn:hover {
-  background: var(--accent-color);
-  color: var(--background-color);
-}
-/* Kill the preloader overlay immediately */
-.preloader { display: none !important; }
-/* If any script adds a scroll lock, ignore it */
-body, html { overflow-y: auto !important; }
-body.no-scroll { overflow: auto !important; }
-
-
-/* =========================
-   MOBILE POLISH PACK
-   (paste at end of style.css)
-   ========================= */
-
-/* Global: kill any sideways scroll + tame big paddings */
-@media (max-width: 991px) {
-  html, body { overflow-x: hidden !important; }
-  section.padding-large { padding-top: 40px; padding-bottom: 40px; }
-  section.padding-medium { padding-top: 32px; padding-bottom: 32px; }
-  section.padding-small { padding-top: 24px; padding-bottom: 24px; }
+/* MOBILE NAV: use Stellarnav’s toggle but icon-only; hide "MENU" text */
+@media (max-width: 1200px) {
+  /* keep Stellarnav toggle visible */
+  .stellarnav .menu-toggle { display: inline-flex !important; align-items: center; gap: 6px; }
+  .stellarnav .menu-toggle span { display: none !important; } /* hide the word MENU */
+  .stellarnav .menu-toggle i { font-size: 22px; line-height: 1; }
+  /* hide any custom hamburger, to avoid duplicates */
+  header .hamburger { display: none !important; }
 }
 
-/* Header: keep logo + text tidy; hide extra badges in dropdowns */
-@media (max-width: 991px) {
-  .main-logo { gap: 8px; }
-  .main-logo img { height: 48px; width: auto; }
-  .main-logo .logo-text { font-size: 14px; white-space: nowrap; }
-  #header .stellarnav ul ul li > a.menu-split .orcid-btn { display: none; } /* optional */
-}
-
-/* Hero (billboard): stack, equalize, and shrink headline a touch */
-@media (max-width: 991px) {
-  #billboard { flex-direction: column; align-items: stretch; min-height: 0; }
-  #billboard .banner-content { flex: 0 0 auto; max-width: none; width: 100%; padding: 24px; }
-  #billboard .banner-holder { flex: 0 0 auto; width: 100%; }
-  #billboard .banner-holder img { width: 100%; height: auto; object-fit: cover; }
-  #billboard .banner-title { font-size: 36px; line-height: 1.1; }
-}
-
-/* Mobile: hide the plugin's duplicate toggle ("MENU") */
-@media (max-width: 991px) {
-  /* Stellarnav's built-in mobile toggle + its "MENU" label */
-  #header .stellarnav .menu-toggle,
-  #header .stellarnav .menu-toggle * {
-    display: none !important;
-  }
-
-  /* Make sure your hamburger is the one we see */
-  #header .hamburger {
-    display: flex !important;
-    z-index: 1001;
-  }
-}
+/* tidy header brand on mobile */
 @media (max-width: 991px) {
   .main-logo { display: flex; align-items: center; gap: 8px; }
   .main-logo img { height: 44px; width: auto; }
   .main-logo .logo-text { font-size: 14px; white-space: nowrap; }
-
-  /* Give the right-side icons room */
-  #navbar { position: relative; }
-  #navbar .btn-search { margin-right: 8px; }
-}
-/* Posters: make sure the header sits above shapes and has a little top space */
-#posters .section-header {
-  position: relative;
-  z-index: 2;
-  padding-top: 8px;
-  margin-bottom: 14px;
 }
 
-/* On small screens, reduce the big title size so it doesn’t push things off */
-@media (max-width: 767px) {
-  #posters .section-title { font-size: clamp(26px, 7vw, 34px); line-height: 1.1; }
-  #posters .sub-title     { margin-top: 6px; font-size: 14px; }
-}
+/* =========================================================
+   BILLBOARD (hero) — 40/60 desktop, stacked mobile
+   ========================================================= */
 
-/* Use Stellarnav's own mobile toggle; hide the custom hamburger */
-@media (max-width: 991px) {
-  /* SHOW plugin toggle (undo any earlier hide) */
-  #header .stellarnav .menu-toggle,
-  #header .stellarnav .menu-toggle * {
-    display: unset !important;   /* let the plugin's CSS control it */
-  }
-
-  /* HIDE our custom hamburger so there's only one button */
-  #header .hamburger { 
-    display: none !important;
-  }
-}
-
-/* Make sure the plugin toggle looks like a button, not a solid line */
-#header .stellarnav .menu-toggle {
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  line-height: 1;
-}
-/* Ensure the right-column "Posters" label shows clearly */
-#publications .sub-title {
-  display: block;
-  margin: 6px 0 10px;
-  color: var(--accent-color);                 /* readable on white */
-}
-
-/* When stacked on mobile, add a bit of space before the second column */
-@media (max-width: 991px) {
-  #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
-  #publications .pub-col + .pub-col { margin-top: 0; } /* rely on gap */
-}
-
-/* Make Stellarnav toggle icon-only */
-.stellarnav .menu-toggle span {
-  display: none; /* hides "MENU" text */
-}
-
-.stellarnav .menu-toggle i {
-  font-size: 22px; /* adjust icon size if needed */
-  line-height: 1;
-}
-/* Hide search button */
-#header .btn-search {
-  display: none !important;
-}
-/* --- MOBILE NAV: keep only the icon hamburger, kill Stellarnav's "MENU" --- */
-@media (max-width: 1200px) {
-  /* Hide Stellarnav's mobile toggle completely (this is the one that shows "MENU") */
-  .stellarnav .menu-toggle { display: none !important; }
-
-  /* Show *your* hamburger icon button */
-  header .hamburger {
-    display: flex !important;
-    align-items: center;
-    gap: 0;
-    background: transparent;      /* no background block */
-    padding: 10px;
-    z-index: 1001;
-  }
-  header .hamburger .bar {
-    background-color: var(--accent-color); /* make sure bars are visible */
-    height: 3px;
-    width: 24px;
-  }
-}
-
-/* --- Remove the search button entirely (no space wasted) --- */
-#header .btn-search { display: none !important; }
-
-/* --- Make sure Publications' right-column heading "Posters" always shows --- */
-#publications .sub-title {
-  display: block !important;
-  margin: 6px 0 12px !important;
-  color: var(--accent-color);
-}
-@media (max-width: 991px) {
-  #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
-}
-
-/* --- Billboard alignment + spacing fix --- */
 #billboard {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;   /* text + image same height */
-  margin: 0;              /* kill outside gap */
-  padding: 0;             /* kill inside gap */
+  align-items: stretch;   /* equal height columns */
+  margin: 0;
+  padding: 0;
 }
-
-/* Text column: align like Publications/Talks */
 #billboard .banner-content {
-  flex: 0 0 40%;          /* keep 40/60 split on desktop */
+  flex: 0 0 40%;
   max-width: 40%;
-  padding: 2rem;          /* spacing inside */
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;       /* ✅ left-align text */
+  text-align: left;       /* align like Publications/Talks */
 }
-
-/* Image column */
 #billboard .banner-holder {
   flex: 0 0 60%;
   max-width: 60%;
-  margin: 0;              /* remove gaps */
+  margin: 0;
+  position: relative;
 }
-
 #billboard .banner-holder img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fill without distortion */
+  object-fit: cover;
   display: block;
-  margin: 0;              /* remove gaps */
+  margin: 0;
 }
 
-/* --- Mobile: stack cleanly, no white space --- */
+/* location badge (top-right over image) */
+.location-badge {
+  position: absolute; top: 12px; right: 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 8px;
+  color: #fff;
+}
+.location-badge .marker-icon {
+  max-width: 12px; max-height: 12px; width: auto; height: auto; display: block;
+}
+.location-badge .marker-text {
+  font-weight: 600; font-size: 14px; font-family: var(--heading-font, "Raleway", sans-serif);
+}
+
+/* mobile: stack cleanly, remove gaps */
 @media (max-width: 991px) {
   #billboard .banner-content,
   #billboard .banner-holder {
     flex: 0 0 100%;
     max-width: 100%;
-    padding: 1.2rem;       /* smaller padding for phones */
+    padding: 1.2rem;
   }
-
-  #billboard .banner-holder img {
-    height: auto;          /* natural height on mobile */
-  }
+  #billboard .banner-holder img { height: auto; }
 }
 
+/* =========================================================
+   PUBLICATIONS (two columns: Papers / Posters)
+   ========================================================= */
 
+#publications {
+  position: relative;
+  padding-left: 2em; /* match other sections on desktop */
+  background: #fff;  /* white background */
+}
+#publications .section-title { /* inherits theme heading */ }
+#publications .sub-title {
+  display: block;
+  font-family: var(--heading-font, "Raleway", Arial, sans-serif);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: clamp(18px, 2vw, 22px);
+  margin: 0 0 12px 0;
+  color: var(--accent-color);
+}
+
+#publications .pub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+#publications .pub-item p { margin: 0; }
+#publications .pub-citation { line-height: 1.3; margin: 0; }
+
+/* inline "View" tag next to title */
+.pub-title-line {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
+}
+.view-btn {
+  display: inline-block;
+  margin-left: 0;
+  padding: 2px 6px;
+  font-size: 11px; font-weight: 600;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  transition: all 0.25s ease;
+}
+.view-btn:hover { background: var(--accent-color); color: var(--background-color); }
+
+/* mobile: stack columns, lighter inset */
+@media (max-width: 991px) {
+  #publications { padding-left: 1rem; }
+  #publications .pub-grid { grid-template-columns: 1fr; gap: 22px; }
+}
+
+/* =========================================================
+   TALKS (matches Publications look)
+   ========================================================= */
+
+#talks {
+  position: relative;
+  padding-left: 2em;
+  background: var(--accent-bg, var(--bg-accent, transparent)); /* keep your current accent background */
+}
+#talks .section-title { /* theme heading */ }
+#talks .talk-citation {
+  font-family: var(--body-font, "Raleway", Arial, sans-serif);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0;
+}
+@media (max-width: 991px) {
+  #talks { padding-left: 1rem; }
+}
+
+/* =========================================================
+   POSTERS (grid with always-visible overlay)
+   ========================================================= */
+
+#posters { background: var(--background-color); }
+#posters .section-header { position: relative; z-index: 2; padding-top: 8px; margin-bottom: 14px; }
+
+.poster-item { position: relative; overflow: hidden; }
+.poster-thumb { position: relative; overflow: hidden; width: 100%; aspect-ratio: 4 / 3; border-radius: 8px; }
+.poster-thumb img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.4s ease;
+}
+.poster-thumb:hover img { transform: scale(1.05); }
+
+/* overlay: always visible, color swap on hover using theme vars */
+.poster-overlay {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: var(--accent-color);           /* default bar */
+  color: var(--background-color);            /* default text */
+  padding: 10px 12px;
+  border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+.poster-overlay * { color: inherit; }
+
+.poster-title { font-size: 14px; font-weight: 600; line-height: 1.3; margin: 0 0 4px 0; }
+.poster-citation { font-size: 12px; line-height: 1.3; margin: 0; font-weight: 400; }
+
+/* hover: invert colors */
+.poster-thumb:hover .poster-overlay {
+  background: var(--background-color);
+  color: var(--accent-color);
+}
+
+/* posters mobile: 1 per row and compact text */
+@media (max-width: 767px) {
+  #posters .col-sm-6, #posters .col-md-4 { width: 100%; flex: 0 0 100%; max-width: 100%; }
+  .poster-overlay { padding: 8px 10px; }
+  .poster-title { font-size: 13px; line-height: 1.25; margin: 0 0 3px; }
+  .poster-citation { font-size: 11px; line-height: 1.25; }
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+/* footer logo sizing (safe) */
+#footer .company-brand .footer-logo {
+  height: 48px !important; width: auto !important; display: block;
+  margin-bottom: 40px;
+}
+
+/* thin bottom bar */
+#footer-bottom { padding-top: 8px; padding-bottom: 8px; }
+#footer-bottom p { margin: 0; }
+
+/* =========================================================
+   UTILITIES / SPACING POLISH
+   ========================================================= */
+
+@media (max-width: 991px) {
+  /* trim section paddings on mobile for tighter layout */
+  section.padding-large { padding-top: 40px; padding-bottom: 40px; }
+  section.padding-medium { padding-top: 32px; padding-bottom: 32px; }
+  section.padding-small { padding-top: 24px; padding-bottom: 24px; }
+
+  /* avoid sideways scroll from any wide child */
+  .container, .row, section { overflow-x: hidden; }
+}
