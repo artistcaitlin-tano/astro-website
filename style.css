@@ -372,7 +372,7 @@ abbr {
 
 /*------------------------------------------------
 /* 2.3 Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -437,7 +437,7 @@ label > .label-body {
 
 /*------------------------------------------------
 /* 2.4 Lists
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 ul {
   list-style: circle inside; }
 ol {
@@ -456,7 +456,7 @@ li {
 
 /*------------------------------------------------
 /* 2.5 Code
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 code {
   padding: .2rem .5rem;
   margin: 0 .2rem;
@@ -473,7 +473,7 @@ pre > code {
 
 /*------------------------------------------------
 /* 2.6 Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 th,
 td {
   padding: 12px 15px;
@@ -488,7 +488,7 @@ td:last-child {
 
 /*------------------------------------------------
 /* 2.7 Spacing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 button,
 .button {
   margin-bottom: 1rem; }
@@ -509,7 +509,7 @@ form {
 
 /*------------------------------------------------
 /* 2.8 Utilities
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 .u-full-width {
   width: 100%;
   box-sizing: border-box; 
@@ -565,7 +565,7 @@ form {
 }
 /*------------------------------------------------
 /* 2.9 Misc
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
@@ -1680,6 +1680,20 @@ header .hamburger .bar {
     border: 1px solid #d0d3b9;
 }
 
+
+/*----- Billboard
+--------------------------------------------------------------*/
+#billboard .slider-item {
+    display: flex;
+}
+#billboard .banner-content {
+    width: 40%;
+    padding: 195px 0 80px 170px;
+    position: relative;
+}
+#billboard .banner-element {
+    width: 80%;
+}
 .banner-content h2.banner-title {
     font-size: 3.8em;
     line-height: 1.2;
@@ -1687,7 +1701,12 @@ header .hamburger .bar {
     color: #053634;
     text-transform: capitalize;
 }
-
+#billboard .banner-content p {
+    margin-bottom: 15px;
+}
+#billboard .banner-holder {
+    width: 60%;
+}
 .main-slider .slick-dots {
     position: absolute;
     flex-wrap: wrap;
@@ -1728,17 +1747,45 @@ header .hamburger .bar {
     opacity: 1;
 }
 
+@media only screen and (max-width: 1340px) {
+  #billboard .banner-content {
+      padding: 80px 0 80px 80px;
+  }
+}
 @media only screen and (max-width: 999px) {
+  #billboard .slider-item {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+  }
   .main-slider .slick-dots {
       top: 100px;
   }
   img.banner-image {
       height: 500px;
   }
+  #billboard .banner-content {
+      width: 100%;
+      margin-bottom: 30px;
+  }
+  #billboard .banner-holder {
+      width: 100%;
+  }
+}
 
 @media only screen and (max-width: 699px) {
+  #billboard .slider-item {
+      flex-wrap: wrap;
+  }
+  #billboard .banner-content {
+      width: 100%;
+      padding: 80px 0 80px 30px;
+      margin-left: 0;
+  }
   .banner-content h2.banner-title {
       font-size: 2.3em;
+  }
+  #billboard .banner-holder {
+      margin-left: 0;
   }
   .main-slider .slick-dots {
       bottom: 545px;
@@ -1953,7 +2000,7 @@ footer#footer {
 }
 /* Footer logo: correct selector + force sizing */
 #footer .company-brand .footer-logo {
-  height: 100px !important;   /* adjust to taste: 40–70px */
+  height: 100px !important;   /* adjust to taste: 40â€“70px */
   width: auto !important;
   display: block;
   margin-bottom: 0px;        /* keep your spacing */
@@ -2158,6 +2205,7 @@ footer#footer {
   color: white;
   border-radius: 4px;
 }
+
 /* ===== Publications section layout ===== */
 
 
@@ -2312,7 +2360,7 @@ html, body {
   line-height: 1;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 
-  border: 2px solid var(--accent-color); /* ✅ outline in darker green */
+  border: 2px solid var(--accent-color); /* âœ… outline in darker green */
 }
 
 
@@ -2371,7 +2419,7 @@ html {
   display: flex;
   justify-content: space-between; /* push text left, badge right */
   align-items: center;
-  gap: 12px; /* small space so text doesn’t touch badge */
+  gap: 12px; /* small space so text doesnâ€™t touch badge */
 }
 
 /* ORCID badge (reuse your earlier style) */
@@ -2464,7 +2512,7 @@ html {
 
 .main-logo .logo-text {
   margin-left: 10px;
-  white-space: nowrap;  /* 🔑 prevents text from wrapping */
+  white-space: nowrap;  /* ðŸ”‘ prevents text from wrapping */
   font-family: var(--heading-font, "Raleway", sans-serif);
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -2585,201 +2633,3 @@ html {
 /* If any script adds a scroll lock, ignore it */
 body, html { overflow-y: auto !important; }
 body.no-scroll { overflow: auto !important; }
-
-
-/* =========================
-   MOBILE POLISH PACK
-   (paste at end of style.css)
-   ========================= */
-
-/* Global: kill any sideways scroll + tame big paddings */
-@media (max-width: 991px) {
-  html, body { overflow-x: hidden !important; }
-  section.padding-large { padding-top: 40px; padding-bottom: 40px; }
-  section.padding-medium { padding-top: 32px; padding-bottom: 32px; }
-  section.padding-small { padding-top: 24px; padding-bottom: 24px; }
-}
-
-/* Header: keep logo + text tidy; hide extra badges in dropdowns */
-@media (max-width: 991px) {
-  .main-logo { gap: 8px; }
-  .main-logo img { height: 48px; width: auto; }
-  .main-logo .logo-text { font-size: 14px; white-space: nowrap; }
-  #header .stellarnav ul ul li > a.menu-split .orcid-btn { display: none; } /* optional */
-}
-
-/* Hero (billboard): stack, equalize, and shrink headline a touch */
-@media (max-width: 991px) {
-  #billboard { flex-direction: column; align-items: stretch; min-height: 0; }
-  #billboard .banner-content { flex: 0 0 auto; max-width: none; width: 100%; padding: 24px; }
-  #billboard .banner-holder { flex: 0 0 auto; width: 100%; }
-  #billboard .banner-holder img { width: 100%; height: auto; object-fit: cover; }
-  #billboard .banner-title { font-size: 36px; line-height: 1.1; }
-}
-
-/* Mobile: hide the plugin's duplicate toggle ("MENU") */
-@media (max-width: 991px) {
-  /* Stellarnav's built-in mobile toggle + its "MENU" label */
-  #header .stellarnav .menu-toggle,
-  #header .stellarnav .menu-toggle * {
-    display: none !important;
-  }
-
-  /* Make sure your hamburger is the one we see */
-  #header .hamburger {
-    display: flex !important;
-    z-index: 1001;
-  }
-}
-@media (max-width: 991px) {
-  .main-logo { display: flex; align-items: center; gap: 8px; }
-  .main-logo img { height: 44px; width: auto; }
-  .main-logo .logo-text { font-size: 14px; white-space: nowrap; }
-
-  /* Give the right-side icons room */
-  #navbar { position: relative; }
-  #navbar .btn-search { margin-right: 8px; }
-}
-/* Posters: make sure the header sits above shapes and has a little top space */
-#posters .section-header {
-  position: relative;
-  z-index: 2;
-  padding-top: 8px;
-  margin-bottom: 14px;
-}
-
-/* On small screens, reduce the big title size so it doesn’t push things off */
-@media (max-width: 767px) {
-  #posters .section-title { font-size: clamp(26px, 7vw, 34px); line-height: 1.1; }
-  #posters .sub-title     { margin-top: 6px; font-size: 14px; }
-}
-
-/* Use Stellarnav's own mobile toggle; hide the custom hamburger */
-@media (max-width: 991px) {
-  /* SHOW plugin toggle (undo any earlier hide) */
-  #header .stellarnav .menu-toggle,
-  #header .stellarnav .menu-toggle * {
-    display: unset !important;   /* let the plugin's CSS control it */
-  }
-
-  /* HIDE our custom hamburger so there's only one button */
-  #header .hamburger { 
-    display: none !important;
-  }
-}
-
-/* Make sure the plugin toggle looks like a button, not a solid line */
-#header .stellarnav .menu-toggle {
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  line-height: 1;
-}
-/* Ensure the right-column "Posters" label shows clearly */
-#publications .sub-title {
-  display: block;
-  margin: 6px 0 10px;
-  color: var(--accent-color);                 /* readable on white */
-}
-
-/* When stacked on mobile, add a bit of space before the second column */
-@media (max-width: 991px) {
-  #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
-  #publications .pub-col + .pub-col { margin-top: 0; } /* rely on gap */
-}
-
-/* Make Stellarnav toggle icon-only */
-.stellarnav .menu-toggle span {
-  display: none; /* hides "MENU" text */
-}
-
-.stellarnav .menu-toggle i {
-  font-size: 22px; /* adjust icon size if needed */
-  line-height: 1;
-}
-/* Hide search button */
-#header .btn-search {
-  display: none !important;
-}
-/* --- MOBILE NAV: keep only the icon hamburger, kill Stellarnav's "MENU" --- */
-@media (max-width: 1200px) {
-  /* Hide Stellarnav's mobile toggle completely (this is the one that shows "MENU") */
-  .stellarnav .menu-toggle { display: none !important; }
-
-  /* Show *your* hamburger icon button */
-  header .hamburger {
-    display: flex !important;
-    align-items: center;
-    gap: 0;
-    background: transparent;      /* no background block */
-    padding: 10px;
-    z-index: 1001;
-  }
-  header .hamburger .bar {
-    background-color: var(--accent-color); /* make sure bars are visible */
-    height: 3px;
-    width: 24px;
-  }
-}
-
-/* --- Remove the search button entirely (no space wasted) --- */
-#header .btn-search { display: none !important; }
-
-/* --- Make sure Publications' right-column heading "Posters" always shows --- */
-#publications .sub-title {
-  display: block !important;
-  margin: 6px 0 12px !important;
-  color: var(--accent-color);
-}
-@media (max-width: 991px) {
-  #publications .pub-grid { display: flex; flex-direction: column; gap: 22px; }
-}
-
-/* --- Billboard alignment + spacing fix --- */
-#billboard {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;   /* text + image same height */
-  margin: 0;              /* kill outside gap */
-  padding: 0;             /* kill inside gap */
-}
-
-/* Text column: align like Publications/Talks */
-#billboard .banner-content {
-  flex: 0 0 40%;          /* keep 40/60 split on desktop */
-  max-width: 40%;
-  padding: 2rem;          /* spacing inside */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;       /* ✅ left-align text */
-}
-
-/* Image column */
-#billboard .banner-holder {
-  flex: 0 0 60%;
-  max-width: 60%;
-  margin: 0;              /* remove gaps */
-}
-
-#billboard .banner-holder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* fill without distortion */
-  display: block;
-  margin: 0;              /* remove gaps */
-}
-
-/* --- Mobile: stack cleanly, no white space --- */
-@media (max-width: 991px) {
-  #billboard .banner-content,
-  #billboard .banner-holder {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 1.2rem;       /* smaller padding for phones */
-  }
-
-  #billboard .banner-holder img {
-    height: auto;          /* natural height on mobile */
-  }
-}
