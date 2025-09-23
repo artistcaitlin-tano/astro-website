@@ -195,14 +195,32 @@
 })(jQuery);
 
 
-// ===== Custom hamburger toggle for mobile nav =====
-document.addEventListener("DOMContentLoaded", function() {
+// === Custom hamburger toggle (mobile) ===
+document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger");
   const menu = document.querySelector("#navbar .menu-list");
 
-  if (hamburger && menu) {
-    hamburger.addEventListener("click", function() {
-      menu.classList.toggle("active");
+  if (!hamburger || !menu) return;
+
+  // open/close on tap
+  hamburger.addEventListener("click", function () {
+    menu.classList.toggle("active");
+    document.body.classList.toggle("menu-open", menu.classList.contains("active"));
+  });
+
+  // close menu when a link is tapped
+  menu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
     });
-  }
+  });
+
+  // close if resized back to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 992) {
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
 });
