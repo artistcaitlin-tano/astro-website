@@ -2832,20 +2832,49 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* Mobile menu behavior with custom hamburger */
+/* === Mobile nav driven by OUR hamburger (no "MENU" text) === */
 @media (max-width: 991px) {
+  /* Hide Stellarnav’s own toggle completely */
+  .stellarnav .menu-toggle,
+  .stellarnav .menu-toggle * { display: none !important; }
+
+  /* Keep header on top and prevent overlap glitches */
+  #header .header-wrap { position: sticky; top: 0; z-index: 3000; }
+
+  /* Show our hamburger on mobile */
+  .hamburger {
+    display: flex !important;
+    width: 28px; height: 22px;
+    flex-direction: column; justify-content: space-between;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .hamburger .bar {
+    height: 3px; width: 100%;
+    background: var(--accent-color, #1c3b34);
+    border-radius: 2px;
+  }
+
+  /* Mobile dropdown panel (hidden by default) */
   #navbar .menu-list {
-    display: none;                /* hidden by default */
+    display: none;                       /* hidden until .active */
+    position: fixed;                     /* attaches to viewport */
+    top: 64px;                           /* just under header */
+    left: 0; right: 0;
+    background: var(--background-color, #fff);
+    padding: 16px 20px;
     flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 60px;  /* adjust to sit just under your header */
-    right: 0;
-    left: 0;
-    padding: 1rem;
-    z-index: 1000;
+    gap: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    z-index: 2000;
   }
-  #navbar .menu-list.active {
-    display: flex;                /* visible when toggled */
-  }
+  #navbar .menu-list.active { display: flex; }
+
+  /* Avoid sideways scroll when menu is open */
+  body.menu-open { overflow: hidden; }
+}
+
+/* Hide our hamburger on desktop */
+@media (min-width: 992px) {
+  .hamburger { display: none !important; }
 }
