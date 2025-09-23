@@ -195,3 +195,5 @@
 })(jQuery);
 
 
+document.addEventListener('DOMContentLoaded', initHamburgerMenu);
+
