@@ -74,10 +74,6 @@ var initHamburgerMenu = function() {
   }
 };
 
-// ✨ make sure it actually runs
-document.addEventListener("DOMContentLoaded", initHamburgerMenu);
-
-  
   // init jarallax parallax
   var initJarallax = function() {
     jarallax(document.querySelectorAll(".jarallax"));
@@ -204,5 +200,6 @@ document.addEventListener("DOMContentLoaded", initHamburgerMenu);
 
 
 document.addEventListener('DOMContentLoaded', initHamburgerMenu);
+
 
 
