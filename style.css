@@ -2978,41 +2978,29 @@ body.no-scroll { overflow: auto !important; }
   }
   #header .hamburger .bar {
     height: 3px; width: 100%;
-    background: var(--accent-color;
+    background: var(--accent-color, #053634);
     border-radius: 2px;
   }
 
-/* Mobile menu panel */
-#navbar #mainMenu {
-  display: none;
-  position: fixed;
-  top: 64px; left: 0; right: 0;
-  background: var(--background-color); /* change bg to accent */
-  padding: 16px 20px;
-  flex-direction: column;
-  gap: 12px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-  z-index: 2000;
+  /* Mobile menu panel behavior (hidden by default; shows when .responsive is added) */
+  #navbar #mainMenu {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--background-color, #fff);
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    z-index: 2000;
+  }
+  #navbar #mainMenu.responsive { display: flex; }
+
+  /* Optional: lock page scroll when menu is open (your JS toggles .menu-open) */
+  body.menu-open { overflow: hidden; }
 }
 
-/* Show when toggled */
-#navbar #mainMenu.responsive { display: flex; }
-
-/* Links inside the mobile menu */
-#navbar #mainMenu .nav-link {
-  color: var(--accent-color); /* text contrast (white on accent bg) */
-  font-size: 1.2rem;
-  text-decoration: none;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+/* Desktop: hide hamburger */
+@media (min-width: 992px) {
+  .hamburger { display: none !important; }
 }
-
-/* Optional hover effect */
-#navbar #mainMenu .nav-link:hover {
-  color: var(--background-color, #fff); /* could invert or lighten */
-  opacity: 0.85;
-}
-
-
-
-
