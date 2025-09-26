@@ -2959,6 +2959,8 @@ body.no-scroll { overflow: auto !important; }
   .hamburger { display: none !important; }
 }
 
+
+
 /* === FINAL: Use ONLY our custom hamburger on mobile (<= 991px) === */
 @media (max-width: 991px) {
   /* Kill plugin's toggle completely */
@@ -3005,24 +3007,17 @@ body.no-scroll { overflow: auto !important; }
   .hamburger { display: none !important; }
 }
 
-/* ==== HAMBURGER: FINAL OVERRIDES ==== */
-
-/* 1) Hide on desktop, no exceptions */
-@media (min-width: 992px) {
-  #header .hamburger { display: none !important; }
-}
-
-/* 2) No white chip on mobile */
+/* MOBILE: no chip, but KEEP the middle bar */
 @media (max-width: 991px) {
   #header .hamburger {
-    background: transparent !important;
+    background-color: transparent !important; /* not 'background:' */
     padding: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
   }
 }
 
-/* 3) Bar → X animation (no chip) */
+/* Bar → X animation (with middle line as background stripe) */
 #header .hamburger {
   display: flex !important;
   position: relative;
@@ -3031,8 +3026,8 @@ body.no-scroll { overflow: auto !important; }
   z-index: 3001;
   cursor: pointer;
 
-  /* middle bar as a stripe */
-  background-image: linear-gradient(var(--accent-color), var(--accent-color));
+  /* re-assert the middle bar */
+  background-image: linear-gradient(var(--accent-color), var(--accent-color)) !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 3px;
@@ -3046,20 +3041,15 @@ body.no-scroll { overflow: auto !important; }
   left: 0; right: 0;
   height: 3px;
   background: var(--accent-color);
-  transition: transform .25s ease, top .25s ease, opacity .2s ease;
+  transition: transform .25s ease, top .25s ease;
 }
-#header .hamburger::before { top: 0; }      /* top line */
-#header .hamburger::after  { top: 22px; }   /* bottom line */
+#header .hamburger::before { top: 0; }     /* top line */
+#header .hamburger::after  { top: 22px; }  /* bottom line */
 
-#header .hamburger.active {
-  background-size: 0 3px;                   /* hide middle */
-}
-#header .hamburger.active::before {
-  top: 50%; transform: translateY(-50%) rotate(45deg);
-}
-#header .hamburger.active::after  {
-  top: 50%; transform: translateY(-50%) rotate(-45deg);
-}
+#header .hamburger.active { background-size: 0 3px; }
+#header .hamburger.active::before { top: 50%; transform: translateY(-50%) rotate(45deg); }
+#header .hamburger.active::after  { top: 50%; transform: translateY(-50%) rotate(-45deg); }
+
 
 
 
