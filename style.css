@@ -3057,11 +3057,6 @@ body.no-scroll { overflow: auto !important; }
     display: none !important;
   }
 }
-/* Hide on desktop */
-@media (min-width: 992px) {
-  #header .hamburger { display: none !important; }
-}
-
 /* Button container (no chip) */
 #header .hamburger {
   display: flex !important;
@@ -3115,6 +3110,7 @@ body.no-scroll { overflow: auto !important; }
   opacity: 1;
   transform: translateY(-50%) rotate(-45deg);
 }
+
 
 
 
