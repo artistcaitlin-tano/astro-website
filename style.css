@@ -3024,5 +3024,8 @@ header .hamburger .bar {
   opacity: 1 !important;  /* in case a rule is fading it */
 }
 
+/* DEBUG (remove after you see it) */
+#header .hamburger { outline: 1px solid red !important; }
+
 
 
