@@ -3065,16 +3065,6 @@ body.no-scroll { overflow: auto !important; }
   z-index: 9999;
 }
 
-/* Optional contrast chip so lines are always visible on your dark header */
-@media (max-width: 991px) {
-  #header .hamburger{
-    background: var(--light-background-color);
-    border-radius: 8px;
-    padding: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
-  }
-}
-
 /* Draw THREE lines with one pseudo-element + box-shadows */
 #header .hamburger::before{
   content: "";
@@ -3095,6 +3085,7 @@ body.no-scroll { overflow: auto !important; }
   opacity: 1 !important;
   transform: none !important;
 }
+
 
 
 
