@@ -3050,7 +3050,13 @@ body.no-scroll { overflow: auto !important; }
 #header .hamburger.active::before { top: 50%; transform: translateY(-50%) rotate(45deg); }
 #header .hamburger.active::after  { top: 50%; transform: translateY(-50%) rotate(-45deg); }
 
-
+/* HIDE HAMBURGER ON DESKTOP — max force */
+@media (min-width: 992px) {
+  #hamburger,
+  #header .hamburger {
+    display: none !important;
+  }
+}
 
 
 
