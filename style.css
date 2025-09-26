@@ -3057,6 +3057,65 @@ body.no-scroll { overflow: auto !important; }
     display: none !important;
   }
 }
+/* Hide on desktop */
+@media (min-width: 992px) {
+  #header .hamburger { display: none !important; }
+}
+
+/* Button container (no chip) */
+#header .hamburger {
+  display: flex !important;
+  position: relative;
+  width: 34px; height: 26px;
+  margin-left: auto;
+  z-index: 3001;
+  cursor: pointer;
+
+  /* ensure no background chip anywhere */
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* === 3 bars using only pseudo-elements === */
+/* ::before draws TOP+MIDDLE+BOTTOM via box-shadows */
+#header .hamburger::before,
+#header .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 3px;
+  background: var(--accent-color);
+  transition: transform .25s ease, top .25s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+/* Three bars: top + (middle, bottom) via shadows */
+#header .hamburger::before {
+  top: 3px;  /* top line */
+  box-shadow:
+    0 8px 0 var(--accent-color),   /* middle line */
+    0 16px 0 var(--accent-color);  /* bottom line */
+}
+
+/* Second stroke used only for the X */
+#header .hamburger::after {
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;   /* hidden in hamburger state */
+}
+
+/* === Active: morph to X === */
+#header .hamburger.active::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  box-shadow: none;   /* hide middle & bottom from ::before */
+}
+#header .hamburger.active::after {
+  opacity: 1;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
 
 
 
