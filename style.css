@@ -3246,3 +3246,62 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+
+/* ==== MOBILE: make the Publications +/× impossible to miss ==== */
+@media (max-width: 991px) {
+
+  /* Ensure the LI is the positioning context */
+  .stellarnav li.has-sub { position: relative !important; }
+
+  /* Kill any built-in SVG/chevrons so only our icon shows */
+  .stellarnav li.has-sub > .dd-toggle svg,
+  .stellarnav li.has-sub > .dd-toggle i,
+  .stellarnav li.has-sub > .dd-toggle span { display: none !important; }
+
+  /* Place the toggle at right, and make it visible (debug ring) */
+  .stellarnav li.has-sub > .dd-toggle {
+    position: absolute !important;
+    right: 14px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: inline-flex !important;
+    align-items: center; justify-content: center;
+    width: 34px; height: 34px;
+    z-index: 5000 !important;
+
+    /* kill any hiding tricks */
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    text-indent: 0 !important;
+
+    background: transparent !important;
+    border: 2px solid #ebb017 !important;     /* <<< DEBUG ring so you can SEE it */
+    border-radius: 50%;
+    box-shadow: none !important;
+    pointer-events: auto !important;
+  }
+
+  /* Draw the + / × ourselves */
+  .stellarnav li.has-sub > .dd-toggle::after {
+    content: "+" !important;
+    color: #ebb017 !important;                 /* triangle yellow */
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    font-family: inherit !important;
+    -webkit-text-stroke: 0px #053634;          /* improves contrast on OLED */
+  }
+  .stellarnav li.has-sub.open > .dd-toggle::after,
+  .stellarnav li.has-sub.active > .dd-toggle::after {
+    content: "×" !important;
+  }
+
+  /* Keep the label centered and reserve space for the icon */
+  .main-menu ul.menu-list.responsive > li.has-sub > a {
+    display: block !important;
+    text-align: center !important;
+    padding-right: 52px !important;
+    position: relative !important;
+  }
+}
