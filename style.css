@@ -3370,4 +3370,78 @@ body.no-scroll { overflow: auto !important; }
     content: "×" !important;
   }
 }
+/* ===== MOBILE: one clean +/× on the right; no grey triangle ===== */
+@media (max-width: 991px) {
+
+  /* Make the LI the positioning context */
+  .stellarnav li.has-sub { position: relative !important; }
+
+  /* Keep the big centered word; reserve space for the icon on the right */
+  .stellarnav li.has-sub > a,
+  .main-menu ul.menu-list.responsive > li.has-sub > a {
+    display: block !important;
+    text-align: center !important;
+    padding-right: 56px !important;     /* room for the +/× */
+    position: relative !important;
+    line-height: 1.15 !important;
+  }
+
+  /* 1) KILL the built-in chevrons/triangles completely */
+  .stellarnav li.has-sub > a:after,
+  .stellarnav li.has-sub > a:before {
+    content: none !important;
+    display: none !important;
+    border: 0 !important;
+    background: none !important;
+  }
+
+  /* 2) Take over the plugin's toggle and pin it to the right on SAME row */
+  .stellarnav li.has-sub > .dd-toggle {
+    position: absolute !important;
+    top: 50% !important;
+    right: 16px !important;
+    left: auto !important;          /* cancel any left positioning */
+    transform: translateY(-50%) !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px; height: 32px;      /* tap target */
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-indent: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10 !important;
+  }
+
+  /* Hide any SVG/chevron inside the toggle itself */
+  .stellarnav li.has-sub > .dd-toggle svg,
+  .stellarnav li.has-sub > .dd-toggle i,
+  .stellarnav li.has-sub > .dd-toggle span {
+    display: none !important;
+  }
+
+  /* 3) Draw our own yellow + / × */
+  .stellarnav li.has-sub > .dd-toggle::after {
+    content: "+" !important;
+    display: block !important;
+    color: #ebb017 !important;       /* triangle yellow */
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    font-family: Arial, sans-serif !important; /* reliable glyphs */
+    text-align: center !important;
+  }
+  .stellarnav li.has-sub.open > .dd-toggle::after,
+  .stellarnav li.has-sub.active > .dd-toggle::after {
+    content: "×" !important;
+  }
+}
+
 
