@@ -3183,19 +3183,15 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE: center the label, park the + on the right, make it yellow === */
 @media (max-width: 991px) {
-  /* 1) The LI is our positioning context */
-  .stellarnav li.has-sub { position: relative !important; }
-
-  /* 2) Keep the text big & centered; reserve space for the + */
-  .main-menu ul.menu-list.responsive > li.has-sub > a {
-    display: block !important;
-    text-align: center !important;
-    padding-right: 48px !important;   /* room for the + */
+  /* 1) Hide Stellarnav’s built-in SVG toggle completely */
+  .stellarnav li.has-sub > .dd-toggle svg,
+  .stellarnav li.has-sub > .dd-toggle i,
+  .stellarnav li.has-sub > .dd-toggle span {
+    display: none !important;
   }
 
-  /* 3) Put the plugin’s .dd-toggle (the "+") on the same line, right side */
+  /* 2) Style the .dd-toggle itself as our icon container */
   .stellarnav li.has-sub > .dd-toggle {
     position: absolute !important;
     right: 16px !important;
@@ -3206,41 +3202,31 @@ body.no-scroll { overflow: auto !important; }
     align-items: center;
     justify-content: center;
 
-    width: 28px; height: 28px;        /* tap target */
+    width: 28px; height: 28px;
     margin: 0 !important;
     padding: 0 !important;
     background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
+    border: none !important;
 
-    color: var(--secondary-color) !important; /* yellow */
-    font-size: 24px !important;
+    font-size: 28px !important;
+    font-weight: 600 !important;
     line-height: 1 !important;
+    color: var(--secondary-color) !important; /* your yellow */
     text-decoration: none !important;
+
+    /* Force it to show a + by default */
+    content: "+" !important;
   }
 
-  /* Some themes draw triangles/chevrons—neutralize them */
-  .stellarnav li.has-sub > a:after,
-  .stellarnav li.has-sub > a:before,
-  .stellarnav li.has-sub > .dd-toggle:before,
-  .stellarnav li.has-sub > .dd-toggle:after {
-    content: none !important;
-    border: 0 !important;
-    background: none !important;
-  }
-
-  /* If the plus is inside an <i>/<span>, color that too */
-  .stellarnav li.has-sub > .dd-toggle i,
-  .stellarnav li.has-sub > .dd-toggle span,
-  .stellarnav li.has-sub > .dd-toggle em {
+  /* 3) Use ::after to actually render the + or × */
+  .stellarnav li.has-sub > .dd-toggle::after {
+    content: "+" !important;
     color: var(--secondary-color) !important;
   }
-
-  /* When the submenu is open, show × instead of + (many builds toggle .open/.active) */
-  .stellarnav li.has-sub.open > .dd-toggle,
-  .stellarnav li.has-sub.active > .dd-toggle {
+  .stellarnav li.has-sub.open > .dd-toggle::after,
+  .stellarnav li.has-sub.active > .dd-toggle::after {
+    content: "×" !important;
     color: var(--secondary-color) !important;
   }
-  /* If the plugin swaps the character via text, leave as-is; if not, you can force it: */
-  /* .stellarnav li.has-sub.open > .dd-toggle::after { content: "×"; } */
 }
+
