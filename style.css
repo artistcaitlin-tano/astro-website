@@ -3183,26 +3183,49 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+/* === MOBILE ONLY: center text, park the +/× at right, make it yellow === */
 @media (max-width: 991px) {
-  /* Make parent links flex so text + icon share a row */
-  .stellarnav li.has-sub > a {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 40px !important; /* reserve space on right */
+
+  /* Keep the big centered label; don't let layout rules push it */
+  .main-menu ul.menu-list.responsive > li > a.nav-link {
+    display: block !important;          /* cancel any flex from earlier */
+    text-align: center !important;
+    padding-right: 44px !important;     /* reserve room for the +/× */
   }
 
-  /* Style the + / × toggle */
+  /* The Publications row (or any item with a submenu) gets a right-side icon */
+  .main-menu ul.menu-list.responsive > li.has-sub > a {
+    position: relative !important;      /* anchor for the pseudo icon */
+    display: block !important;          /* ensure centered text stays centered */
+    text-align: center !important;
+    padding-right: 44px !important;     /* same reserve space */
+  }
+
+  /* Place and style the +/× */
+  .main-menu ul.menu-list.responsive > li.has-sub > a:after,
   .stellarnav li.has-sub > a:after {
     position: absolute !important;
     right: 16px !important;
     top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: 24px !important;   /* smaller than the word */
+    transform: translateY(-50%) !important;  /* vertically centered */
+    display: inline-block !important;        /* don't drop to next line */
+    font-size: 24px !important;              /* smaller than the word */
     line-height: 1 !important;
-    color: var(--secondary-color) !important; /* yellow like triangles */
+    color: var(--secondary-color) !important;/* yellow like your triangles */
+    opacity: 1 !important;
+  }
+
+  /* When the submenu opens, Stellarnav toggles a state (often .open or .active).
+     Rotate the icon there to make the ×, but keep it aligned. Add both to be safe. */
+  .main-menu ul.menu-list.responsive > li.has-sub.open > a:after,
+  .main-menu ul.menu-list.responsive > li.has-sub.active > a:after,
+  .stellarnav li.has-sub.open > a:after,
+  .stellarnav li.has-sub.active > a:after {
+    transform: translateY(-50%) rotate(45deg) !important;
   }
 }
+
+
 
 
 
