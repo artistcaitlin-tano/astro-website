@@ -3049,6 +3049,52 @@ body.no-scroll { overflow: auto !important; }
   transform: none !important;
 }
 
+/* === Bulletproof hamburger (no inner spans needed) === */
+
+/* Show on mobile; hide on desktop */
+@media (min-width: 992px) {
+  #header .hamburger { display: none !important; }
+}
+
+/* The button itself */
+#header .hamburger{
+  display: flex !important;
+  position: relative;          /* anchor for ::before */
+  width: 34px; height: 26px;
+  margin-left: auto;
+  z-index: 9999;
+}
+
+/* Optional contrast chip so lines are always visible on your dark header */
+@media (max-width: 991px) {
+  #header .hamburger{
+    background: var(--light-background-color);
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+}
+
+/* Draw THREE lines with one pseudo-element + box-shadows */
+#header .hamburger::before{
+  content: "";
+  position: absolute;
+  left: 8px; right: 8px;       /* line length */
+  top: 7px;                    /* top line y-position */
+  height: 3px;
+  background: var(--accent-color);                 /* line color (your green) */
+  box-shadow:
+    0 8px 0 var(--accent-color),                   /* middle line */
+    0 16px 0 var(--accent-color);                  /* bottom line */
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Neutralize any template "active" transforms */
+#header .hamburger.active::before{
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 
 
