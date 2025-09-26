@@ -3120,33 +3120,40 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: fix Publications dropdown === */
 @media (max-width: 991px) {
-  /* Make submenu background yellow */
+  /* Publications submenu link layout */
   .main-menu ul.menu-list.responsive li.has-sub > ul > li > a {
     background: var(--secondary-color) !important;
-    color: #053634 !important; /* dark green text on yellow */
-    font-size: 16px !important; /* smaller text so it doesn't overlap */
+    color: #053634 !important;
+    font-size: 15px !important;
     line-height: 1.4 !important;
     padding: 12px 18px !important;
-    display: flex;
+
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;                 /* breathing room */
   }
 
-  /* Adjust the + / × toggle size and spacing */
+  /* Force the text to take only its space */
+  .main-menu ul.menu-list.responsive li.has-sub > ul > li > a span,
+  .main-menu ul.menu-list.responsive li.has-sub > ul > li > a .menu-text {
+    flex: 1 1 auto;            /* let it shrink if needed */
+    white-space: nowrap;       /* keep it on one line */
+    overflow: hidden;          /* don’t spill */
+    text-overflow: ellipsis;   /* add … if it’s too long */
+  }
+
+  /* Keep the + / × aligned right and smaller */
   .stellarnav li.has-sub > a:after {
     font-size: 16px !important;
+    flex: 0 0 auto;
     margin-left: auto;
-    padding-left: 10px;
-  }
-
-  /* Optional: make hover a slightly lighter yellow */
-  .main-menu ul.menu-list.responsive li.has-sub > ul > li > a:hover {
-    background: #f0c63d !important;
-    color: #000 !important;
+    padding-left: 6px;
   }
 }
+
+
 
 
 
