@@ -3112,6 +3112,13 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+/* HIDE HAMBURGER ON DESKTOP — max force */
+@media (min-width: 992px) {
+  #hamburger,
+  #header .hamburger {
+    display: none !important;
+  }
+}
 
 
 
