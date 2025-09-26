@@ -3039,42 +3039,56 @@ body.no-scroll { overflow: auto !important; }
   transform: none !important;
 }
 
-/* === Bulletproof hamburger (no inner spans needed) === */
-
-/* Show on mobile; hide on desktop */
+/* Hide on desktop */
 @media (min-width: 992px) {
   #header .hamburger { display: none !important; }
 }
 
-/* The button itself */
-#header .hamburger{
+/* Button container (mobile) */
+#header .hamburger {
   display: flex !important;
-  position: relative;          /* anchor for ::before */
+  position: relative;
   width: 34px; height: 26px;
   margin-left: auto;
-  z-index: 9999;
+  z-index: 3001;
+  cursor: pointer;
 }
 
-/* Draw THREE lines with one pseudo-element + box-shadows */
-#header .hamburger::before{
+/* --- 3 lines (top/bottom via pseudo-elements, middle via background) --- */
+#header .hamburger::before,
+#header .hamburger::after {
   content: "";
   position: absolute;
-  left: 8px; right: 8px;       /* line length */
-  top: 7px;                    /* top line y-position */
+  left: 0; right: 0;
   height: 3px;
-  background: var(--accent-color);                 /* line color (your green) */
-  box-shadow:
-    0 8px 0 var(--accent-color),                   /* middle line */
-    0 16px 0 var(--accent-color);                  /* bottom line */
-  opacity: 1 !important;
-  transform: none !important;
+  background: var(--accent-color);
+  transition: transform .25s ease, top .25s ease, opacity .2s ease;
+}
+#header .hamburger::before { top: 0; }       /* top line */
+#header .hamburger::after  { top: 22px; }    /* bottom line */
+
+/* Middle line as a background stripe */
+#header .hamburger {
+  background-image: linear-gradient(var(--accent-color), var(--accent-color));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 3px;   /* full width, 3px tall */
+  transition: background-size .2s ease;
 }
 
-/* Neutralize any template "active" transforms */
-#header .hamburger.active::before{
-  opacity: 1 !important;
-  transform: none !important;
+/* --- ACTIVE: morph to X --- */
+#header .hamburger.active {
+  background-size: 0 3px; /* hide middle line */
 }
+#header .hamburger.active::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+#header .hamburger.active::after {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
 
 
 
