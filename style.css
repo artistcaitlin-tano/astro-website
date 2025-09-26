@@ -3120,5 +3120,33 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+/* === MOBILE ONLY: fix Publications dropdown === */
+@media (max-width: 991px) {
+  /* Make submenu background yellow */
+  .main-menu ul.menu-list.responsive li.has-sub > ul > li > a {
+    background: var(--secondary-color) !important;
+    color: #053634 !important; /* dark green text on yellow */
+    font-size: 16px !important; /* smaller text so it doesn't overlap */
+    line-height: 1.4 !important;
+    padding: 12px 18px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Adjust the + / × toggle size and spacing */
+  .stellarnav li.has-sub > a:after {
+    font-size: 16px !important;
+    margin-left: auto;
+    padding-left: 10px;
+  }
+
+  /* Optional: make hover a slightly lighter yellow */
+  .main-menu ul.menu-list.responsive li.has-sub > ul > li > a:hover {
+    background: #f0c63d !important;
+    color: #000 !important;
+  }
+}
+
 
 
