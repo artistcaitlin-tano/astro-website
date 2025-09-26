@@ -3011,5 +3011,18 @@ header .hamburger .bar {
   background-color: var(--accent-color) !important;
 }
 
+#header .hamburger { 
+  position: relative; 
+  z-index: 9999;          /* above any menu panels/dots/etc. */
+}
+
+#header .hamburger .bar {
+  display: block;         /* make sure spans render */
+  width: 24px;
+  height: 3px;
+  background: var(--accent-color) !important; /* color you want */
+  opacity: 1 !important;  /* in case a rule is fading it */
+}
+
 
 
