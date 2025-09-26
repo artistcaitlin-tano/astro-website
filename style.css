@@ -3305,3 +3305,69 @@ body.no-scroll { overflow: auto !important; }
     position: relative !important;
   }
 }
+
+/* ===== MOBILE: park the Publications +/× on the right, same row ===== */
+@media (max-width: 991px) {
+
+  /* Make the <li> the positioning context */
+  .stellarnav li.has-sub { position: relative !important; }
+
+  /* Keep the big centered label and reserve room for the icon */
+  .stellarnav li.has-sub > a,
+  .main-menu ul.menu-list.responsive > li.has-sub > a {
+    display: block !important;
+    text-align: center !important;
+    padding-right: 56px !important; /* room for the +/× on the right */
+    position: relative !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Take over the plugin’s toggle and pin it to the right, same row */
+  .stellarnav li.has-sub > .dd-toggle,
+  .stellarnav li.has-sub > a.dd-toggle,
+  .stellarnav li.has-sub .dd-toggle {
+    position: absolute !important;
+    top: 50% !important;
+    right: 14px !important;
+    left: auto !important;        /* cancel any left positioning */
+    transform: translateY(-50%) !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px; height: 32px;    /* tap target */
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;        /* cancel plugin float */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-indent: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10 !important;
+  }
+
+  /* Hide any built-in SVG/chevrons inside the toggle */
+  .stellarnav li.has-sub > .dd-toggle svg,
+  .stellarnav li.has-sub > .dd-toggle i,
+  .stellarnav li.has-sub > .dd-toggle span { display: none !important; }
+
+  /* Draw our own icon */
+  .stellarnav li.has-sub > .dd-toggle::after {
+    content: "+" !important;
+    display: block !important;
+    color: #ebb017 !important;     /* your triangle yellow */
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    font-family: Arial, sans-serif !important;
+    text-align: center !important;
+  }
+  .stellarnav li.has-sub.open > .dd-toggle::after,
+  .stellarnav li.has-sub.active > .dd-toggle::after {
+    content: "×" !important;
+  }
+}
+
