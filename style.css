@@ -3183,47 +3183,49 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: center text, park the +/× at right, make it yellow === */
+/* === MOBILE MENU: use ONE right-side icon, hide duplicates === */
 @media (max-width: 991px) {
-
-  /* Keep the big centered label; don't let layout rules push it */
-  .main-menu ul.menu-list.responsive > li > a.nav-link {
-    display: block !important;          /* cancel any flex from earlier */
-    text-align: center !important;
-    padding-right: 44px !important;     /* reserve room for the +/× */
-  }
-
-  /* The Publications row (or any item with a submenu) gets a right-side icon */
+  /* 1) Keep labels centered; reserve space at right for the icon */
+  .main-menu ul.menu-list.responsive > li > a.nav-link,
   .main-menu ul.menu-list.responsive > li.has-sub > a {
-    position: relative !important;      /* anchor for the pseudo icon */
-    display: block !important;          /* ensure centered text stays centered */
+    display: block !important;
     text-align: center !important;
-    padding-right: 44px !important;     /* same reserve space */
+    padding-right: 44px !important;  /* room for the icon */
+    position: relative !important;
   }
 
-  /* Place and style the +/× */
+  /* 2) HIDE Stellarnav's extra left-side toggle link */
+  .stellarnav li.has-sub > a + .dd-toggle,
+  .stellarnav li.has-sub .dd-toggle {
+    display: none !important;
+  }
+
+  /* 3) Use ONLY the :after on the main link as our icon */
+  .main-menu ul.menu-list.responsive > li.has-sub > a:before { display: none !important; }
   .main-menu ul.menu-list.responsive > li.has-sub > a:after,
   .stellarnav li.has-sub > a:after {
+    content: '+' !important;            /* plus by default */
     position: absolute !important;
     right: 16px !important;
     top: 50% !important;
-    transform: translateY(-50%) !important;  /* vertically centered */
-    display: inline-block !important;        /* don't drop to next line */
-    font-size: 24px !important;              /* smaller than the word */
+    transform: translateY(-50%) !important;
+    font-size: 24px !important;
     line-height: 1 !important;
-    color: var(--secondary-color) !important;/* yellow like your triangles */
-    opacity: 1 !important;
+    color: var(--secondary-color) !important;  /* your yellow */
+    background: none !important;
+    border: 0 !important;
   }
 
-  /* When the submenu opens, Stellarnav toggles a state (often .open or .active).
-     Rotate the icon there to make the ×, but keep it aligned. Add both to be safe. */
+  /* 4) When open, show × (no rotation/chevron) */
   .main-menu ul.menu-list.responsive > li.has-sub.open > a:after,
   .main-menu ul.menu-list.responsive > li.has-sub.active > a:after,
   .stellarnav li.has-sub.open > a:after,
   .stellarnav li.has-sub.active > a:after {
-    transform: translateY(-50%) rotate(45deg) !important;
+    content: '×' !important;
+    transform: translateY(-50%) !important; /* keep centered */
   }
 }
+
 
 
 
