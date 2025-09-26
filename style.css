@@ -3154,6 +3154,35 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+/* === MOBILE MENU FIX: keep big text but reserve space for the +/× === */
+@media (max-width: 991px) {
+  /* Keep large headings but make them responsive, not oversized */
+  .main-menu ul.menu-list.responsive > li > a.nav-link {
+    font-size: clamp(28px, 7.2vw, 40px) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Publications (and any item with a submenu): reserve room on the right */
+  .stellarnav li.has-sub > a {
+    position: relative !important;
+    padding-right: 48px !important;          /* space for the +/× */
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Place the +/× icon and size it smaller than the text */
+  .stellarnav li.has-sub > a:after {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 28px !important;              /* smaller than the word */
+    line-height: 1 !important;
+    margin: 0 !important;                    /* kill any default offset */
+  }
+}
+
 
 
 
