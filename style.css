@@ -3120,37 +3120,5 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === Fix Publications dropdown === */
-
-/* Make submenu background yellow instead of gray */
-.main-menu.stellarnav.desktop li.has-sub > ul > li > a {
-  background: var(--secondary-color) !important;
-  border-bottom: 1px solid #e9e9e5;
-  font-size: 15px !important;   /* smaller so it doesn't overlap */
-  line-height: 1.4 !important;  /* tighter line spacing */
-  padding: 12px 18px !important;
-  display: flex;                /* let text and + icon align */
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Make submenu text always readable on yellow */
-.main-menu.stellarnav.desktop li.has-sub > ul > li > a {
-  color: #053634 !important; /* your dark green text */
-}
-
-/* Ensure hover state still looks good */
-.main-menu.stellarnav.desktop li.has-sub > ul > li > a:hover {
-  background: #f0c63d !important; /* slightly lighter yellow hover */
-  color: #000 !important;
-}
-
-/* Make the + / × toggle sit neatly on the right */
-.stellarnav li.has-sub > a:after {
-  margin-left: auto;
-  font-size: 16px !important;   /* smaller icon */
-  padding-left: 10px;           /* space from text */
-}
-
 
 
