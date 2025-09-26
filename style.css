@@ -1628,7 +1628,7 @@ header .hamburger .bar {
         cursor: pointer;
     }
     .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
+        opacity: 100;
     }
 
     .hamburger.active .bar:nth-child(1) {
@@ -3004,5 +3004,6 @@ body.no-scroll { overflow: auto !important; }
 @media (min-width: 992px) {
   .hamburger { display: none !important; }
 }
+
 
 
