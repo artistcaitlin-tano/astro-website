@@ -3033,16 +3033,6 @@ body.no-scroll { overflow: auto !important; }
   transform: none !important;
 }
 
-/* Nice contrast “chip” on mobile so the lines never blend into header */
-@media (max-width: 991px) {
-  #header .hamburger {
-    background: var(--light-background-color);
-    padding: 8px;
-    border-radius: 8px;
-    gap: 6px;                /* spacing between lines */
-  }
-}
-
 /* Neutralize any template transforms that try to make an "X" */
 #header .hamburger.active .hline {
   opacity: 1 !important;
@@ -3085,6 +3075,7 @@ body.no-scroll { overflow: auto !important; }
   opacity: 1 !important;
   transform: none !important;
 }
+
 
 
 
