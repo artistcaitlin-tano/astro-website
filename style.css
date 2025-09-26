@@ -3230,3 +3230,19 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+@media (max-width: 991px) {
+  /* Force the +/× to show yellow, no matter what */
+  .stellarnav li.has-sub > .dd-toggle::after {
+    content: "+" !important;
+    color: #ebb017 !important;          /* hard-coded triangle yellow */
+    font-size: 28px !important;
+    font-weight: 700 !important;
+  }
+
+  .stellarnav li.has-sub.open > .dd-toggle::after,
+  .stellarnav li.has-sub.active > .dd-toggle::after {
+    content: "×" !important;
+    color: #ebb017 !important;          /* same yellow for the X */
+  }
+}
+
