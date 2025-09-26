@@ -3006,5 +3006,10 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+/* Always use accent color for hamburger bars */
+header .hamburger .bar {
+  background-color: var(--accent-color) !important;
+}
+
 
 
