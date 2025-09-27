@@ -3407,45 +3407,35 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: posters triangles same size as index, keep triangles === */
-@media (max-width: 991px) {
-  :root { --tri-mobile: 120px; } /* ← tweak to match index triangle exactly */
-
-  /* Strong, posters-specific selectors */
-  section#billboard.billboard-posters.poster-hero::before,
-  section#billboard.billboard-posters.poster-hero::after {
-    /* Border triangles MUST be zero-size boxes */
-    width: 0 !important;
-    height: 0 !important;
-
-    /* Remove any background/scale we may have tried earlier */
-    background: none !important;
-    transform: none !important;
-  }
-
-  /* Bottom-left triangle */
-  section#billboard.billboard-posters.poster-hero::before {
-    position: absolute !important;
-    left: 0; bottom: 0; right: auto; top: auto;
-    border-style: solid !important;
-    /* top | right | bottom | left border widths */
-    border-width: 0 var(--tri-mobile) var(--tri-mobile) 0 !important;
-    /* only the right & bottom borders are colored to form the triangle */
-    border-color: transparent var(--secondary-color) var(--secondary-color) transparent !important;
-    content: "" !important;
-  }
-
-  /* Bottom-right triangle */
-  section#billboard.billboard-posters.poster-hero::after {
-    position: absolute !important;
-    right: 0; bottom: 0; left: auto; top: auto;
-    border-style: solid !important;
-    /* top | right | bottom | left */
-    border-width: var(--tri-mobile) 0 0 var(--tri-mobile) !important;
-    border-color: var(--secondary-color) transparent transparent var(--secondary-color) !important;
-    content: "" !important;
-  }
-}
+@media (max-width: 991px) {    /* === Posters hero: right triangles in the bottom corners === */
+    #billboard.poster-hero::before,
+    #billboard.poster-hero::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      background: transparent !important;
+      transform: none !important;
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    /* Bottom-left: right triangle */
+    #billboard.poster-hero::before{
+      right: 0;
+      /* adjust sizes: first = horizontal leg, second = vertical leg */
+      border-right: 100px solid var(--triangle-color, #F0B310); /* yellow */
+      border-top:   100px solid transparent;
+    }
+    
+    /* Bottom-right: right triangle */
+    #billboard.poster-hero::after{
+      left: 0;
+      border-left: 100px solid var(--triangle-color, #F0B310);  /* yellow */
+      border-top:  100px solid transparent;
+    }
+} 
 
 
 
