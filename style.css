@@ -3218,23 +3218,34 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: make banner image full-width + top aligned === */
+/* === MOBILE ONLY: make the banner photo full-bleed & sit higher === */
 @media (max-width: 991px) {
-  #billboard {
-    padding: 0 !important;   /* remove extra padding on mobile */
-    margin: 0 !important;
+  /* remove side padding only for the image row inside the banner */
+  #billboard .container,
+  #billboard .banner-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  #billboard img.banner-image {
+  /* catch the banner image no matter which class the template used */
+  #billboard .banner-element img,
+  #billboard .banner-image,
+  #billboard img {
     display: block;
-    width: 100% !important;    /* span full width */
-    height: auto !important;   /* keep proportions */
-    object-fit: cover;         /* crop if needed to fill */
-    margin: 0 auto;
-    position: relative;
-    top: 0 !important;         /* flush with top */
+    width: 100vw !important;          /* full device width */
+    max-width: none !important;
+    height: auto;
+    /* center the image while escaping the container’s padding */
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    margin-top: 0 !important;         /* pull it up */
   }
+
+  /* if a wrapper around the image has top spacing, kill it on mobile */
+  #billboard .banner-element { margin-top: 0 !important; }
 }
+
 
 
 
