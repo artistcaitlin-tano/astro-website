@@ -3438,6 +3438,14 @@ body.no-scroll { overflow: auto !important; }
 } 
 
 
+/* === MOBILE ONLY: add space above Posters subheading on index.html === */
+@media (max-width: 991px) {
+  /* Scope to homepage billboard */
+  body.bg-body #publications .pub-col .sub-title {
+    margin-top: 1em !important;  /* adjust as needed */
+  }
+}
+
 
 
 
