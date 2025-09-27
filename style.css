@@ -3407,6 +3407,35 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+/* === MOBILE ONLY: Posters triangles scaled to match index size === */
+@media (max-width: 991px) {
+
+  /* If triangles are actual elements */
+  .billboard-posters .triangle-left,
+  .billboard-posters .triangle--left,
+  .billboard-posters .triangle-right,
+  .billboard-posters .triangle--right {
+    transform: scale(0.78) !important;          /* adjust until it matches index */
+    transform-origin: bottom left !important;   /* left triangle anchor */
+  }
+
+  .billboard-posters .triangle-right,
+  .billboard-posters .triangle--right {
+    transform-origin: bottom right !important;  /* right triangle anchor */
+  }
+
+  /* If triangles are pseudo-elements (::before/::after) */
+  .billboard-posters::before {                  /* bottom-left triangle */
+    transform: scale(0.78) !important;
+    transform-origin: bottom left !important;
+  }
+
+  .billboard-posters::after {                   /* bottom-right triangle */
+    transform: scale(0.78) !important;
+    transform-origin: bottom right !important;
+  }
+}
+
 
 
 
