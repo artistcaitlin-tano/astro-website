@@ -3244,6 +3244,32 @@ body.no-scroll { overflow: auto !important; }
   }
 
 
+/* === MOBILE ONLY: tighten gap under banner photo === */
+@media (max-width: 991px) {
+  #billboard {
+    margin-bottom: 0 !important;   /* kill section bottom margin */
+    padding-bottom: 0 !important;  /* kill section bottom padding */
+  }
+
+  #billboard img.banner-image {
+    margin-bottom: 0 !important;   /* no gap below image */
+    padding-bottom: 0 !important;
+  }
+
+  /* pull Publications closer if it's still too far */
+  #publications {
+    margin-top: 0.5em !important;  /* adjust: 0em, 0.25em, 0.5em */
+  }
+}
+/* === MOBILE ONLY: lift marker icon + text above the photo === */
+@media (max-width: 991px) {
+  #billboard .marker-icon,
+  #billboard .marker-text {
+    position: relative !important;
+    top: -2em !important;   /* adjust as needed */
+  }
+}
+
 
 
 
