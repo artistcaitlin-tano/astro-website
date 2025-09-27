@@ -3212,7 +3212,7 @@ body.no-scroll { overflow: auto !important; }
 
     /* center it while breaking out of container */
     left: 50% !important;
-    transform: translateX(-50%) translateY(-30px) !important;
+    transform: translateX(-50%) translateY(-2em) !important;
 
     margin: 0 !important;
     border: 0 !important;
@@ -3242,6 +3242,7 @@ body.no-scroll { overflow: auto !important; }
   #billboard .banner-content .banner-element {
     transform: translateX(2em) !important;   /* ← tweak this value */
   }
+
 
 
 
