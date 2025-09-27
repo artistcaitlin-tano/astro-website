@@ -3264,18 +3264,30 @@ body.no-scroll { overflow: auto !important; }
 
 /* === MOBILE ONLY: lift marker icon + text above the photo === */
 @media (max-width: 991px) {
-  #billboard .marker-text {
-    position: relative !important;
-    top: -2.5em !important;   /* adjust as needed */
-  }
-}
-/* === MOBILE ONLY: lift marker icon + text above the photo === */
-@media (max-width: 991px) {
   #billboard .marker-icon {
     position: relative !important;
-    top: -2em !important;   /* adjust as needed */
+    top: -2em !important;       /* tweak as needed */
+  }
+
+  #billboard .marker-text {
+    position: relative !important;
+    top: -2.5em !important;     /* tweak as needed */
   }
 }
+/* === MOBILE ONLY: center footer headings + content === */
+@media (max-width: 991px) {
+  footer .footer-widget,
+  footer .footer-widget h4,
+  footer .footer-widget ul,
+  footer .footer-widget li,
+  footer .footer-widget p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
 
 
 
