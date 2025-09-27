@@ -3415,7 +3415,7 @@ body.no-scroll { overflow: auto !important; }
   .billboard-posters .triangle--left,
   .billboard-posters .triangle-right,
   .billboard-posters .triangle--right {
-    transform: scale(0.78) !important;          /* adjust until it matches index */
+    transform: scale(0.75) !important;          /* adjust until it matches index */
     transform-origin: bottom left !important;   /* left triangle anchor */
   }
 
@@ -3426,15 +3426,16 @@ body.no-scroll { overflow: auto !important; }
 
   /* If triangles are pseudo-elements (::before/::after) */
   .billboard-posters::before {                  /* bottom-left triangle */
-    transform: scale(0.78) !important;
+    transform: scale(0.75) !important;
     transform-origin: bottom left !important;
   }
 
   .billboard-posters::after {                   /* bottom-right triangle */
-    transform: scale(0.78) !important;
+    transform: scale(0.75) !important;
     transform-origin: bottom right !important;
   }
 }
+
 
 
 
