@@ -3274,13 +3274,63 @@ body.no-scroll { overflow: auto !important; }
     top: -2.5em !important;     /* tweak as needed */
   }
 }
+
+
 /* === MOBILE ONLY: center footer headings + content === */
 @media (max-width: 991px) {
+  /* Center the footer columns themselves */
+  footer .row,
+  .site-footer .row,
+  #footer .row {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Common footer widget blocks */
   footer .footer-widget,
+  #footer .footer-widget,
+  .site-footer .footer-widget,
+  footer [class*="footer-"],
+  #footer [class*="footer-"] {
+    text-align: center !important;
+  }
+
+  /* Headings like "Quick Links", "Get in Touch" */
   footer .footer-widget h4,
+  #footer .footer-widget h4,
+  .site-footer .footer-widget h4,
+  footer .widget-title,
+  #footer .widget-title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Lists under Quick Links */
   footer .footer-widget ul,
-  footer .footer-widget li,
-  footer .footer-widget p {
+  #footer .footer-widget ul,
+  .site-footer .footer-widget ul {
+    padding-left: 0 !important;     /* remove left indent */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    list-style-position: inside !important;
+    text-align: center !important;
+  }
+  footer .footer-widget ul li,
+  #footer .footer-widget ul li {
+    display: block !important;
+    text-align: center !important;
+  }
+  footer .footer-widget ul li a {
+    display: inline-block !important;  /* link centers within the line */
+  }
+
+  /* Contact / Get in Touch paragraphs or lists */
+  footer .footer-widget p,
+  #footer .footer-widget p,
+  .site-footer .footer-widget p,
+  footer .contact-list,
+  #footer .contact-list {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
