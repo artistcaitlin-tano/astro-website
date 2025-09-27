@@ -3161,25 +3161,6 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-
-
-/* === MOBILE ONLY: align banner text with section headers (2em inset) === */
-/* === MOBILE ONLY: nudge banner text right to align with Publications === */
-@media (max-width: 991px) {
-  /* make sure it’s left-aligned first */
-  #billboard .banner-content,
-  #billboard .banner-content .banner-element,
-  #billboard .banner-content .banner-title,
-  #billboard .banner-content p {
-    text-align: left !important;
-  }
-
-  /* hard nudge to the right (adjust 2em until it visually matches) */
-  #billboard .banner-content .banner-element {
-    transform: translateX(2em) !important;   /* ← tweak this value */
-  }
-
-
 /* === MOBILE ONLY: Posters heading + text align like Papers === */
 @media (max-width: 991px) {
   /* Posters heading */
@@ -3219,38 +3200,57 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+/* === MOBILE ONLY: banner photo full-bleed + pulled up === */
 @media (max-width: 991px) {
-  /* remove side padding so the image can truly span edge to edge */
-  #billboard .container,
-  #billboard .banner-content { padding-left: 0 !important; padding-right: 0 !important; }
+  /* 1) Kill any wrapper padding/background that creates the white frame */
+  #billboard .banner-element,
+  #billboard .banner-element .image,
+  #billboard .banner-element .figure,
+  #billboard .banner-element .image-holder,
+  #billboard .banner-element .wp-block-image,
+  #billboard .banner-element .photo,
+  #billboard .banner-element .picture {
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
 
-  /* full-bleed image inside the banner */
-  #billboard .banner-element img {
+  /* 2) Make the actual photo bleed to the screen edges */
+  /* exclude the location marker */
+  #billboard .banner-element img:not(.marker):not(.location):not([class*="marker"]) {
     display: block;
-    width: 100% !important;        /* fill the (now unpadded) row */
-    max-width: 100% !important;
+    width: 100vw !important;          /* full device width */
+    max-width: none !important;
     height: auto !important;
-    margin: 0 !important;
+    object-fit: cover;
+    margin-left: calc(50% - 50vw) !important; /* escape container padding */
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
   }
 
-  /* pull the whole image block up a bit (tweak value to taste) */
-  #billboard { padding-top: 0 !important; }
-  #billboard .banner-element { margin-top: -8px !important; }  /* try -8px to -16px */
+  /* 3) Nudge the image upward a bit (tweak -8px/-12px as you like) */
+  #billboard .banner-element { margin-top: -10px !important; }
 }
+
+
+
+
+/* === MOBILE ONLY: align banner text with section headers (2em inset) === */
+/* === MOBILE ONLY: nudge banner text right to align with Publications === */
 @media (max-width: 991px) {
-  #billboard .banner-element { position: relative !important; }
-  /* adjust selector to your marker element if it has a class/id */
-  #billboard .banner-element .location,
-  #billboard .banner-element .marker,
-  #billboard .banner-element .loc {
-    position: absolute !important;
-    top: 10px !important;
-    right: 12px !important;
-    z-index: 2 !important;
+  /* make sure it’s left-aligned first */
+  #billboard .banner-content,
+  #billboard .banner-content .banner-element,
+  #billboard .banner-content .banner-title,
+  #billboard .banner-content p {
+    text-align: left !important;
   }
-}
 
-
+  /* hard nudge to the right (adjust 2em until it visually matches) */
+  #billboard .banner-content .banner-element {
+    transform: translateX(2em) !important;   /* ← tweak this value */
+  }
 
 
 
