@@ -3258,24 +3258,50 @@ body.no-scroll { overflow: auto !important; }
 
   /* pull Publications closer if it's still too far */
   #publications {
-    margin-top: 0.5em !important;  /* adjust: 0em, 0.25em, 0.5em */
+    margin-top: 0em !important;  /* adjust: 0em, 0.25em, 0.5em */
   }
 }
 
-/* === MOBILE ONLY: lift marker + text together === */
+/* === MOBILE ONLY: lock marker (icon + text) over the image, top-right === */
 @media (max-width: 991px) {
-  #billboard .image-overlay {
-    position: relative !important;
-    top: -2em !important;   /* adjust up as a group */
-  }
+  /* make the image wrapper a positioning context */
+  #billboard .banner-element { position: relative !important; }
 
-  /* reset any extra offsets on children so they stay aligned */
+  /* reset any previous nudges */
   #billboard .marker-icon,
   #billboard .marker-text {
-    top: 0 !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
     margin: 0 !important;
   }
+
+  /* absolutely position the icon */
+  #billboard .marker-icon {
+    position: absolute !important;
+    top: 10px !important;           /* adjust if you want higher/lower */
+    right: 16px !important;
+    z-index: 3 !important;
+    width: 22px; height: auto;      /* set your actual icon size */
+  }
+
+  /* absolutely position the text to the LEFT of the icon */
+  #billboard .marker-text {
+    position: absolute !important;
+    top: 12px !important;           /* small tweak to vertically center to icon */
+    right: calc(16px + 22px + 8px) !important; /* right padding + icon width + gap */
+    z-index: 3 !important;
+
+    white-space: nowrap;
+    color: #fff;                    /* or your desired color */
+    text-shadow: 0 1px 2px rgba(0,0,0,.35); /* readability over photo */
+    font-weight: 600;
+  }
 }
+
+
 
 
 
