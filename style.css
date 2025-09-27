@@ -3350,7 +3350,19 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+/* === MOBILE ONLY: Posters page marker position === */
+@media (max-width: 991px) {
+  /* Only affects the marker inside the posters billboard */
+  .billboard-posters .marker-icon {
+    position: relative !important;
+    top: -1em !important;   /* adjust until it looks right */
+  }
 
+  .billboard-posters .marker-text {
+    position: relative !important;
+    top: -1.25em !important; /* adjust separately if needed */
+  }
+}
 
 
 
