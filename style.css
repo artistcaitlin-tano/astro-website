@@ -3388,22 +3388,25 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: Posters billboard text centered + transparent === */
+/* === MOBILE ONLY: Posters billboard heading centered + lifted === */
 @media (max-width: 991px) {
   .billboard-posters .banner-content {
-    text-align: center !important;       /* center align on mobile */
-    background: transparent !important;  /* no colored bg */
+    text-align: center !important;       /* force center */
+    background: transparent !important;  /* already gone */
     padding: 0 !important;
     margin: 0 auto !important;
+    position: relative !important;
+    top: -1em !important;                /* lift the whole block; tweak as needed */
   }
 
   .billboard-posters .banner-title {
     display: inline-block;
-    background: transparent !important;  /* ensure no background */
-    padding: 0.25em 0.5em 0.25em 0.5em;  /* optional breathing space */
+    background: transparent !important;
+    margin: 0 auto !important;
     text-align: center !important;
   }
 }
+
 
 
 
