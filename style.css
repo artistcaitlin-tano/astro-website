@@ -3178,24 +3178,29 @@ body.no-scroll { overflow: auto !important; }
   #billboard .banner-content .banner-element {
     transform: translateX(2em) !important;   /* ← tweak this value */
   }
-
-/* === MOBILE ONLY: align Posters heading + text with Publications === */
+/* === MOBILE: Posters align + wrap correctly === */
 @media (max-width: 991px) {
-  /* Nudge Posters heading over to match Publications */
-  #publications .pub-col .sub-title {
-    transform: translateX(2em) !important;   /* same nudge as banner */
+  /* Undo the transform nudge and use padding instead */
+  #publications .pub-col .sub-title,
+  #publications .pub-col .pub-item p.pub-citation {
+    transform: none !important;
     text-align: left !important;
+
+    /* nudge to match Publications left edge—tweak this value */
+    padding-left: 1.75em !important;
+
+    /* let text run to the right edge without spilling */
+    padding-right: 0.5em !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+
+    /* force wrapping on long strings/URLs */
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
     margin: 0 !important;
   }
-
-  /* Nudge Posters citation text underneath */
-  #publications .pub-col .pub-item p.pub-citation {
-    transform: translateX(2em) !important;   /* same left inset */
-    text-align: left !important;
-    max-width: 100% !important;
-  }
 }
-
 
 
 
