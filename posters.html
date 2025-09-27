@@ -20,28 +20,31 @@
 <body class="bg-body">
 
 <header id="header">
+	<div class="header-wrap">
+		<div class="container">
+			<div class="row">
 
-  <div class="header-wrap">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2 col-xs-6">
-            <div class="main-logo">
-              <a href="index.html">
-                <img src="images/cute_solar.png" alt="logo">
-              </a>
-              <span class="logo-text">Caitlin Bell</span>
-            </div>
-          </div>
-        <div class="col-md-10 col-xs-6">
-          <nav id="navbar">
-            <div class="main-menu stellarnav">
-              <ul class="menu-list">
-                <li class="menu-item"><a href="index.html#header" class="nav-link">About</a></li>
+				<div class="col-md-2 col-xs-6">
+				  <div class="main-logo">
+				    <a href="index.html">
+				      <img src="images/cute_solar.png" alt="logo">
+				    </a>
+				    <span class="logo-text">Caitlin Bell</span>
+				  </div>
+				</div>
 
-                <li class="menu-item has-sub">
-                  <a href="index.html#publications" class="nav-link">Publications</a>
-                  <ul>
-                    <li>
+
+				<div class="col-md-10 col-xs-6">
+					<nav id="navbar">
+						<div class="main-menu stellarnav">
+							<ul class="menu-list" id="mainMenu">
+							  <li class="menu-item"><a href="#header" class="nav-link">About</a></li>
+
+							  <!-- Publications dropdown -->
+							  <li class="menu-item has-sub">
+							    <a href="#publications" class="nav-link">Publications</a>
+							    <ul>
+							      <li>
                       <a href="https://orcid.org/0009-0009-9314-6263" target="_blank" rel="noopener" class="menu-split">
                         <span class="menu-text">Papers</span>
                         <span class="orcid-btn">
@@ -49,24 +52,32 @@
                         </span>
                       </a>
                     </li>
+							      <li>
+							        <!-- Opens the Posters page we’re about to create -->
+							        <a href="posters.html" class="nav-link">Posters</a>
+							      </li>
+							    </ul>
+							  </li>
 
-                    <li><a href="posters.html" class="nav-link">Posters</a></li>
-                  </ul>
-                </li>
+							  <li class="menu-item"><a href="#talks" class="nav-link">Talks</a></li>
+							  <li class="menu-item"><a href="#footer" class="nav-link">Contact</a></li>
+							</ul>
 
-                <li class="menu-item"><a href="index.html#talks" class="nav-link">Talks</a></li>
-                <li class="menu-item"><a href="index.html#footer" class="nav-link">Contact</a></li>
-              </ul>
-            </div>
 
-            <div class="btn-search"><i class="icon icon-search"></i></div>
-            <div class="hamburger" id="hamburger"></div>
-          </nav>
-        </div>
 
-      </div>
-    </div>
-  </div>
+						</div>
+						
+						<div class="btn-search">
+							<i class="icon icon-search"></i>
+						</div>
+
+						<div class="hamburger" id="hamburger"></div>
+					</nav>
+				</div>
+
+			</div>
+		</div>
+	</div>	
 </header>
 <!-- HERO / BILLBOARD FOR POSTERS -->
 <section id="billboard" class="billboard-posters poster-hero">
@@ -160,6 +171,7 @@
 </body>
 
 </html> 
+
 
 
 
