@@ -3218,6 +3218,24 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+/* === MOBILE ONLY: make banner image full-width + top aligned === */
+@media (max-width: 991px) {
+  #billboard {
+    padding: 0 !important;   /* remove extra padding on mobile */
+    margin: 0 !important;
+  }
+
+  #billboard img.banner-image {
+    display: block;
+    width: 100% !important;    /* span full width */
+    height: auto !important;   /* keep proportions */
+    object-fit: cover;         /* crop if needed to fill */
+    margin: 0 auto;
+    position: relative;
+    top: 0 !important;         /* flush with top */
+  }
+}
+
 
 
 
