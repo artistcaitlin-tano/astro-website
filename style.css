@@ -3378,6 +3378,13 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+@media (max-width: 991px) {
+  section#billboard.billboard-posters .marker-icon {
+    position: relative !important;
+    top: -2px !important;   /* raise icon slightly */
+  }
+}
+
 
 
 
