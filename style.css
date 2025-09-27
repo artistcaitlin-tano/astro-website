@@ -3388,6 +3388,23 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+/* === MOBILE ONLY: Posters billboard text centered + transparent === */
+@media (max-width: 991px) {
+  .billboard-posters .banner-content {
+    text-align: center !important;       /* center align on mobile */
+    background: transparent !important;  /* no colored bg */
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .billboard-posters .banner-title {
+    display: inline-block;
+    background: transparent !important;  /* ensure no background */
+    padding: 0.25em 0.5em 0.25em 0.5em;  /* optional breathing space */
+    text-align: center !important;
+  }
+}
+
 
 
 
