@@ -3350,19 +3350,44 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
-/* === MOBILE ONLY: Posters page marker position === */
+/* === MOBILE ONLY — Posters page: reposition marker icon + text === */
 @media (max-width: 991px) {
-  /* Only affects the marker inside the posters billboard */
-  .billboard-posters .marker-icon {
+  /* Make the overlay the positioning context and ensure nothing clips it */
+  section#billboard.billboard-posters .image-overlay {
     position: relative !important;
-    top: -1em !important;   /* adjust until it looks right */
+    overflow: visible !important;
+    z-index: 5 !important;
   }
 
-  .billboard-posters .marker-text {
-    position: relative !important;
-    top: -1.25em !important; /* adjust separately if needed */
+  /* Reset any previous offsets so ours win */
+  section#billboard.billboard-posters .marker-icon,
+  section#billboard.billboard-posters .marker-text {
+    position: absolute !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10 !important;
+  }
+
+  /* Place the icon (adjust top value to taste) */
+  section#billboard.billboard-posters .marker-icon {
+    top: 28px !important;          /* ↓ move DOWN by increasing this */
+    right: 16px !important;
+    width: 22px !important;        /* match your icon size */
+    height: auto !important;
+  }
+
+  /* Place the text on the same row, just to the left of the icon */
+  section#billboard.billboard-posters .marker-text {
+    top: 30px !important;          /* small baseline tweak vs. icon */
+    right: calc(16px + 22px + 8px) !important;  /* edge + icon width + gap */
+    white-space: nowrap !important;
   }
 }
+
 
 
 
