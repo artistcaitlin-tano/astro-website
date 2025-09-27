@@ -3381,12 +3381,13 @@ body.no-scroll { overflow: auto !important; }
 @media (max-width: 991px) {
   section#billboard.billboard-posters .marker-icon {
     position: relative !important;
-    top: -2px !important;    /* lift slightly */
+    top: -1px !important;    /* lift slightly */
     flex: 0 0 auto !important; /* prevent flexbox from resizing */
     width: 22px !important;   /* lock icon size (adjust if needed) */
     height: auto !important;
   }
 }
+
 
 
 
