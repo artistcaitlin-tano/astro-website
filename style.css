@@ -3164,27 +3164,21 @@ body.no-scroll { overflow: auto !important; }
 
 
 /* === MOBILE ONLY: align banner text with section headers (2em inset) === */
+/* === MOBILE ONLY: nudge banner text right to align with Publications === */
 @media (max-width: 991px) {
-  #billboard .banner-content {
-    display: block !important;          /* kill flex/grid centering */
-    text-align: left !important;        /* stop center text-align */
-    padding-left: 2em !important;       /* same as Publications/Talks */
-    margin: 0 auto !important;
-    max-width: 1140px !important;
-    box-sizing: border-box;
-  }
-
-  #billboard .banner-content .banner-element {
-    margin: 0 !important;
-    text-align: left !important;
-  }
-
+  /* make sure it’s left-aligned first */
+  #billboard .banner-content,
+  #billboard .banner-content .banner-element,
   #billboard .banner-content .banner-title,
   #billboard .banner-content p {
-    margin-left: 0 !important;
     text-align: left !important;
   }
-}
 
+  /* hard nudge to the right (adjust 2em until it visually matches) */
+  #billboard .banner-content .banner-element {
+    transform: translateX(2em) !important;   /* ← tweak this value */
+    padding-right: 2em !important;           /* prevent text clipping on the right */
+  }
+}
 
 
