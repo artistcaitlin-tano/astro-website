@@ -3218,35 +3218,37 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: make banner photo full width & flush top === */
+
 @media (max-width: 991px) {
-  /* remove padding that holds the image in */
+  /* remove side padding so the image can truly span edge to edge */
   #billboard .container,
-  #billboard .banner-content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  #billboard .banner-content { padding-left: 0 !important; padding-right: 0 !important; }
+
+  /* full-bleed image inside the banner */
+  #billboard .banner-element img {
+    display: block;
+    width: 100% !important;        /* fill the (now unpadded) row */
+    max-width: 100% !important;
+    height: auto !important;
     margin: 0 !important;
   }
 
-  /* target the banner image */
-  #billboard img,
-  #billboard .banner-element img,
-  #billboard .banner-image {
-    display: block;
-    width: 100vw !important;             /* span full screen */
-    max-width: none !important;
-    height: auto !important;
-    object-fit: cover;                   /* crop if needed */
-    margin-left: calc(50% - 50vw) !important; /* break out of container */
-    margin-top: 0 !important;            /* remove space above */
-  }
-
-  /* kill any wrapper spacing on mobile */
-  #billboard .banner-element {
-    margin-top: 0 !important;
+  /* pull the whole image block up a bit (tweak value to taste) */
+  #billboard { padding-top: 0 !important; }
+  #billboard .banner-element { margin-top: -8px !important; }  /* try -8px to -16px */
+}
+@media (max-width: 991px) {
+  #billboard .banner-element { position: relative !important; }
+  /* adjust selector to your marker element if it has a class/id */
+  #billboard .banner-element .location,
+  #billboard .banner-element .marker,
+  #billboard .banner-element .loc {
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    z-index: 2 !important;
   }
 }
-
 
 
 
