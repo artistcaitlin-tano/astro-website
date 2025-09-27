@@ -3161,3 +3161,10 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+@media (max-width: 991px) {
+  .stellarnav li.has-sub > .dd-toggle {
+    position: relative;
+    top: -4px; /* move it up */
+  }
+}
+
