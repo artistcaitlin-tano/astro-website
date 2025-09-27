@@ -3268,12 +3268,14 @@ body.no-scroll { overflow: auto !important; }
   #billboard .banner-content .banner-title,
   #billboard .banner-content p {
     text-align: left !important;
+    background: var(--background-color)
   }
 
   /* hard nudge to the right (adjust 2em until it visually matches) */
   #billboard .banner-content .banner-element {
     transform: translateX(2em) !important;   /* ← tweak this value */
   }
+
 
 
 
