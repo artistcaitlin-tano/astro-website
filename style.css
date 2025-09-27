@@ -3154,3 +3154,10 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+@media (max-width: 991px) {
+  .main-menu ul.menu-list.responsive a {
+    font-size: 1.5em !important; /* adjust to taste */
+    line-height: 1.3 !important; /* keeps rows neat */
+  }
+}
+
