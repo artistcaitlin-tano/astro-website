@@ -3185,7 +3185,7 @@ body.no-scroll { overflow: auto !important; }
   /* Posters heading */
   #publications .pub-col .sub-title {
     text-align: left !important;
-    padding-left: 2em !important;    /* match Papers indent */
+    padding-left: 1.5em !important;    /* match Papers indent */
     margin-top: 1.5em !important;    /* space above Posters */
     margin-bottom: 0.5em !important;
   }
@@ -3193,7 +3193,7 @@ body.no-scroll { overflow: auto !important; }
   /* Posters citation text */
   #publications .pub-col .pub-item p.pub-citation {
     text-align: left !important;
-    padding-left: 2em !important;    /* same indent as Posters heading */
+    padding-left: 1.5em !important;    /* same indent as Posters heading */
     padding-right: 0.5em !important; /* let text flow right */
     margin-top: 0.25em !important;   /* slight gap under Posters */
     margin-bottom: 1.25em !important;
@@ -3203,4 +3203,5 @@ body.no-scroll { overflow: auto !important; }
     word-break: break-word;
   }
 }
+
 
