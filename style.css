@@ -3163,25 +3163,26 @@ body.no-scroll { overflow: auto !important; }
 
 
 
-/* === MOBILE ONLY: line up banner text with Publications === */
+/* === MOBILE ONLY: align banner text with section headers (2em inset) === */
 @media (max-width: 991px) {
-  /* kill any centering */
-  #billboard .banner-content,
-  #billboard .banner-content .banner-element,
-  #billboard .banner-content .banner-title,
-  #billboard .banner-content p {
+  #billboard .banner-content {
+    display: block !important;          /* kill flex/grid centering */
+    text-align: left !important;        /* stop center text-align */
+    padding-left: 2em !important;       /* same as Publications/Talks */
+    margin: 0 auto !important;
+    max-width: 1140px !important;
+    box-sizing: border-box;
+  }
+
+  #billboard .banner-content .banner-element {
+    margin: 0 !important;
     text-align: left !important;
   }
 
-  /* nudge the whole banner text block to match the Publications inset */
-  #billboard .banner-content {
-    display: block !important;
-    position: relative;
-    /* adjust this until it visually matches the Publications header */
-    padding-left: 2em !important;   /* ← try 36px; tweak +/− to align */
-    box-sizing: border-box;
-    margin: 0 auto;
-    max-width: 1140px;
+  #billboard .banner-content .banner-title,
+  #billboard .banner-content p {
+    margin-left: 0 !important;
+    text-align: left !important;
   }
 }
 
