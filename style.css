@@ -3178,29 +3178,29 @@ body.no-scroll { overflow: auto !important; }
   #billboard .banner-content .banner-element {
     transform: translateX(2em) !important;   /* ← tweak this value */
   }
-/* === MOBILE: Posters align + wrap correctly === */
+
+
+/* === MOBILE ONLY: Posters heading + text align like Papers === */
 @media (max-width: 991px) {
-  /* Undo the transform nudge and use padding instead */
-  #publications .pub-col .sub-title,
-  #publications .pub-col .pub-item p.pub-citation {
-    transform: none !important;
+  /* Posters heading */
+  #publications .pub-col .sub-title {
     text-align: left !important;
+    padding-left: 2em !important;    /* match Papers indent */
+    margin-top: 1.5em !important;    /* space above Posters */
+    margin-bottom: 0.5em !important;
+  }
 
-    /* nudge to match Publications left edge—tweak this value */
-    padding-left: 1.75em !important;
-
-    /* let text run to the right edge without spilling */
-    padding-right: 0.5em !important;
-    box-sizing: border-box !important;
+  /* Posters citation text */
+  #publications .pub-col .pub-item p.pub-citation {
+    text-align: left !important;
+    padding-left: 2em !important;    /* same indent as Posters heading */
+    padding-right: 0.5em !important; /* let text flow right */
+    margin-top: 0.25em !important;   /* slight gap under Posters */
+    margin-bottom: 1.25em !important;
     max-width: 100% !important;
-
-    /* force wrapping on long strings/URLs */
+    box-sizing: border-box;
     overflow-wrap: anywhere;
     word-break: break-word;
-    hyphens: auto;
-    margin: 0 !important;
   }
 }
-
-
 
