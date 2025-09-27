@@ -3220,7 +3220,7 @@ body.no-scroll { overflow: auto !important; }
   #billboard [class*="row"] { --bs-gutter-x: 0 !important; }
 
   /* pull the whole image block upward (tweak -14px to taste) */
-  #billboard .banner-element { position: relative !important; top: -30px !important; }
+  #billboard .banner-element { position: relative !important; top: -100px !important; }
 
   /* nuke wrappers around the img that might add frames/spacing */
   #billboard figure,
@@ -3274,6 +3274,7 @@ body.no-scroll { overflow: auto !important; }
   #billboard .banner-content .banner-element {
     transform: translateX(2em) !important;   /* ← tweak this value */
   }
+
 
 
 
