@@ -3163,28 +3163,26 @@ body.no-scroll { overflow: auto !important; }
 
 
 
-/* === MOBILE ONLY: align banner text with section headers === */
+/* === MOBILE ONLY: line up banner text with Publications === */
 @media (max-width: 991px) {
-  #billboard .banner-content {
-    text-align: left !important;
-    margin: 0 auto;                 /* center the block itself */
-    padding-left: 15px !important;  /* match .container gutter */
-    padding-right: 15px !important; /* match .container gutter */
-    max-width: 1140px;              /* same max width as container */
-    box-sizing: border-box;
-  }
-
-  #billboard .banner-content .banner-element {
-    text-align: left !important;
-    margin-left: 0 !important;
-  }
-
+  /* kill any centering */
+  #billboard .banner-content,
+  #billboard .banner-content .banner-element,
   #billboard .banner-content .banner-title,
   #billboard .banner-content p {
     text-align: left !important;
-    margin-left: 0 !important;
+  }
+
+  /* nudge the whole banner text block to match the Publications inset */
+  #billboard .banner-content {
+    display: block !important;
+    position: relative;
+    /* adjust this until it visually matches the Publications header */
+    padding-left: 36px !important;   /* ← try 36px; tweak +/− to align */
+    padding-right: 15px !important;
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1140px;
   }
 }
-
-
 
