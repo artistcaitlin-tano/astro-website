@@ -3177,8 +3177,7 @@ body.no-scroll { overflow: auto !important; }
   /* hard nudge to the right (adjust 2em until it visually matches) */
   #billboard .banner-content .banner-element {
     transform: translateX(2em) !important;   /* ← tweak this value */
-    padding-right: 2em !important;           /* prevent text clipping on the right */
   }
-}
+
 
 
