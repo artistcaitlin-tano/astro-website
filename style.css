@@ -3204,6 +3204,13 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+/* === MOBILE ONLY: more space above Posters heading === */
+@media (max-width: 991px) {
+  #publications .pub-col .sub-title {
+    margin-top: 2.5em !important;   /* increase spacing above Posters */
+  }
+}
+
 
 
 
