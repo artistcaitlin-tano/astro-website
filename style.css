@@ -3445,3 +3445,62 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+/* === MOBILE: perfect right-side +/×, clickable, no drift === */
+@media (max-width: 991px) {
+
+  /* Anchor: centered label with room for an icon on the right */
+  .stellarnav li.has-sub { position: relative !important; }
+  .stellarnav li.has-sub > a {
+    display: block !important;
+    text-align: center !important;
+    padding-right: 56px !important;   /* reserve space for icon */
+    position: relative !important;
+    line-height: 1.15 !important;
+  }
+
+  /* VISUAL ICON lives on the anchor (always aligned) */
+  .stellarnav li.has-sub > a:after {
+    content: "+" !important;
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: #ebb017 !important;              /* your triangle yellow */
+    display: inline-block !important;
+    pointer-events: none !important;        /* clicks pass through */
+  }
+  /* when open -> × */
+  .stellarnav li.has-sub.open > a:after,
+  .stellarnav li.has-sub.active > a:after {
+    content: "×" !important;
+  }
+
+  /* CLICK TARGET (.dd-toggle) sits invisibly over the icon */
+  .stellarnav li.has-sub > .dd-toggle {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 44px; height: 44px;              /* comfy tap area */
+    margin: 0 !important; padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important; box-shadow: none !important;
+    opacity: 0 !important;                  /* invisible, but... */
+    pointer-events: auto !important;        /* ...still clickable */
+    z-index: 2 !important;
+  }
+
+  /* Hide any built-in visuals inside the toggle (SVG, chevrons, etc.) */
+  .stellarnav li.has-sub > .dd-toggle svg,
+  .stellarnav li.has-sub > .dd-toggle i,
+  .stellarnav li.has-sub > .dd-toggle span,
+  .stellarnav li.has-sub > .dd-toggle:before,
+  .stellarnav li.has-sub > .dd-toggle:after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
