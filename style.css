@@ -3234,7 +3234,7 @@ body.no-scroll { overflow: auto !important; }
   #billboard .banner-content .banner-element,
   #billboard .banner-content .banner-title,
   #billboard .banner-content p {
-    text-align: left !important;
+    text-align: right !important;
     background: var(--background-color)
   }
 
@@ -3286,6 +3286,7 @@ body.no-scroll { overflow: auto !important; }
     margin-right: auto !important;
   }
 }
+
 
 
 
