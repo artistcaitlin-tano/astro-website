@@ -3209,24 +3209,15 @@ body.no-scroll { overflow: auto !important; }
   /* Add a spacer only before subsequent sub-titles (e.g., "Posters") */
   #publications .pub-col .sub-title:not(:first-child) {
     /* keep your left indent */
-    padding-left: 2em !important;
+    padding-left: 1.25em !important;
   }
   #publications .pub-col .sub-title:not(:first-child)::before {
     content: "";
     display: block;
     height: 1.75em;             /* ← tweak this for more/less gap */
   }
-
-  /* Posters citation text stays aligned and wraps correctly */
-  #publications .pub-col .pub-item p.pub-citation {
-    padding-left: 2em !important;
-    padding-right: 0.5em !important;
-    box-sizing: border-box !important;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    margin: 0 !important;
-  }
 }
+
 
 
 
