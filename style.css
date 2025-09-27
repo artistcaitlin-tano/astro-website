@@ -3407,73 +3407,45 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: size pseudo-element triangles on posters === */
+/* === MOBILE ONLY: posters triangles same size as index, keep triangles === */
 @media (max-width: 991px) {
-  /* Set the exact mobile size you want (tweak these to match index) */
-  :root { --tri-mobile: 110px; } /* ← try 110–140px until it matches */
+  :root { --tri-mobile: 120px; } /* ← tweak to match index triangle exactly */
 
-  /* VERY specific so it wins */
+  /* Strong, posters-specific selectors */
   section#billboard.billboard-posters.poster-hero::before,
   section#billboard.billboard-posters.poster-hero::after {
-    /* Make sure the pseudo triangles exist & are transformable */
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    z-index: 1;
+    /* Border triangles MUST be zero-size boxes */
+    width: 0 !important;
+    height: 0 !important;
 
-    /* If they were using a background image: force the size */
-    background-size: var(--tri-mobile) var(--tri-mobile) !important;
-    width: var(--tri-mobile) !important;
-    height: var(--tri-mobile) !important;
-
-    /* If they were using transforms, this will actually scale them */
-    transform: none !important; /* cancel old */
+    /* Remove any background/scale we may have tried earlier */
+    background: none !important;
+    transform: none !important;
   }
 
-  /* If your triangles are border-based (pure CSS triangles), override border widths */
+  /* Bottom-left triangle */
   section#billboard.billboard-posters.poster-hero::before {
-    /* bottom-left triangle */
-    border-style: solid !important;
-    /* top/right/bottom/left border widths (only two matter for a triangle) */
-    border-width: 0 var(--tri-mobile) var(--tri-mobile) 0 !important;
-    border-color: transparent var(--secondary-color) var(--secondary-color) transparent !important;
+    position: absolute !important;
     left: 0; bottom: 0; right: auto; top: auto;
-  }
-  section#billboard.billboard-posters.poster-hero::after {
-    /* bottom-right triangle */
     border-style: solid !important;
+    /* top | right | bottom | left border widths */
+    border-width: 0 var(--tri-mobile) var(--tri-mobile) 0 !important;
+    /* only the right & bottom borders are colored to form the triangle */
+    border-color: transparent var(--secondary-color) var(--secondary-color) transparent !important;
+    content: "" !important;
+  }
+
+  /* Bottom-right triangle */
+  section#billboard.billboard-posters.poster-hero::after {
+    position: absolute !important;
+    right: 0; bottom: 0; left: auto; top: auto;
+    border-style: solid !important;
+    /* top | right | bottom | left */
     border-width: var(--tri-mobile) 0 0 var(--tri-mobile) !important;
     border-color: var(--secondary-color) transparent transparent var(--secondary-color) !important;
-    right: 0; bottom: 0; left: auto; top: auto;
+    content: "" !important;
   }
 }
-/* === MOBILE ONLY: element-based triangles === */
-@media (max-width: 991px) {
-  .billboard-posters .triangle-left,
-  .billboard-posters .triangle--left {
-    width: var(--tri-mobile) !important;
-    height: var(--tri-mobile) !important;
-    left: 0 !important; bottom: 0 !important; /* keep placement */
-    transform: none !important;               /* cancel any scale that might re-shift them */
-    transform-origin: bottom left !important;
-    background-size: var(--tri-mobile) var(--tri-mobile) !important;
-  }
-  .billboard-posters .triangle-right,
-  .billboard-posters .triangle--right {
-    width: var(--tri-mobile) !important;
-    height: var(--tri-mobile) !important;
-    right: 0 !important; bottom: 0 !important;
-    transform: none !important;
-    transform-origin: bottom right !important;
-    background-size: var(--tri-mobile) var(--tri-mobile) !important;
-  }
-}
-
-
-
-
-
-
 
 
 
