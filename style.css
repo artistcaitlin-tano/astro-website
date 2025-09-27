@@ -3200,37 +3200,60 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
-/* === MOBILE ONLY: banner photo full-bleed + pulled up === */
+/* ===== MOBILE NUKE: banner photo full-bleed + pulled up (marker untouched) ===== */
 @media (max-width: 991px) {
-  /* 1) Kill any wrapper padding/background that creates the white frame */
+  /* kill all horizontal gutters/padding in the banner area */
+  #billboard,
+  #billboard .container,
+  #billboard .banner-content,
   #billboard .banner-element,
-  #billboard .banner-element .image,
-  #billboard .banner-element .figure,
-  #billboard .banner-element .image-holder,
-  #billboard .banner-element .wp-block-image,
-  #billboard .banner-element .photo,
-  #billboard .banner-element .picture {
-    padding: 0 !important;
+  #billboard [class*="row"],
+  #billboard [class*="col"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 0 !important;
     background: transparent !important;
+  }
+  /* also zero out Bootstrap gutter var if present */
+  #billboard [class*="row"] { --bs-gutter-x: 0 !important; }
+
+  /* pull the whole image block upward (tweak -14px to taste) */
+  #billboard .banner-element { position: relative !important; top: -14px !important; }
+
+  /* nuke wrappers around the img that might add frames/spacing */
+  #billboard figure,
+  #billboard .wp-block-image,
+  #billboard .image,
+  #billboard .picture,
+  #billboard .photo {
+    padding: 0 !important; margin: 0 !important; border: 0 !important; box-shadow: none !important;
+    background: transparent !important; overflow: visible !important;
+  }
+
+  /* FULL-BLEED THE PHOTO — exclude the marker icon by class/name */
+  #billboard img:not(.marker):not(.location):not([class*="marker"]):not([src*="marker"]) {
+    display: block !important;
+    width: 100vw !important;            /* hard fill viewport width */
+    min-width: 100vw !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: cover !important;
+
+    /* escape any centered container */
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    /* obliterate any spacing */
+    margin: 0 !important;
     border: 0 !important;
     box-shadow: none !important;
   }
 
-  /* 2) Make the actual photo bleed to the screen edges */
-  /* exclude the location marker */
-  #billboard .banner-element img:not(.marker):not(.location):not([class*="marker"]) {
-    display: block;
-    width: 100vw !important;          /* full device width */
-    max-width: none !important;
-    height: auto !important;
-    object-fit: cover;
-    margin-left: calc(50% - 50vw) !important; /* escape container padding */
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* 3) Nudge the image upward a bit (tweak -8px/-12px as you like) */
-  #billboard .banner-element { margin-top: -10px !important; }
+  /* safety: prevent ancestor clipping the bleed */
+  #billboard, #billboard * { overflow: visible !important; box-sizing: border-box !important; }
 }
 
 
@@ -3251,6 +3274,7 @@ body.no-scroll { overflow: auto !important; }
   #billboard .banner-content .banner-element {
     transform: translateX(2em) !important;   /* ← tweak this value */
   }
+
 
 
 
