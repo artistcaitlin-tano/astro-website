@@ -3204,13 +3204,16 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: more space above Posters heading === */
+/* === MOBILE ONLY: add spacing below Papers citation so Posters isn't cramped === */
 @media (max-width: 991px) {
+  #publications .pub-col .pub-item p.pub-citation {
+    margin-bottom: 1.5em !important;   /* increase space under Papers text */
+  }
+
   #publications .pub-col .sub-title {
-    margin-top: 2.5em !important;   /* increase spacing above Posters */
+    margin-top: 0.5em !important;      /* keep Posters heading tight to that new gap */
   }
 }
-
 
 
 
