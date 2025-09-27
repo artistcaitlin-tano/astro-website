@@ -3150,6 +3150,7 @@ body.no-scroll { overflow: auto !important; }
     flex: 0 0 auto;
     margin-left: auto;
     padding-left: 6px;
+    color: #fff;
   }
 }
 
@@ -3347,6 +3348,7 @@ body.no-scroll { overflow: auto !important; }
     margin-right: auto !important;
   }
 }
+
 
 
 
