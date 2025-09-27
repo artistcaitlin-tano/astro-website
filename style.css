@@ -3445,120 +3445,53 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
-/* === MOBILE: perfect right-side +/×, clickable, no drift === */
+
+/* ===== MOBILE: restore Stellarnav's built-in +/× and align it right ===== */
 @media (max-width: 991px) {
 
-  /* Anchor: centered label with room for an icon on the right */
-  .stellarnav li.has-sub { position: relative !important; }
+  /* 0) Keep the big centered labels, but reserve space on the right */
+  .main-menu ul.menu-list.responsive > li > a.nav-link,
   .stellarnav li.has-sub > a {
     display: block !important;
     text-align: center !important;
-    padding-right: 56px !important;   /* reserve space for icon */
-    position: relative !important;
+    padding-right: 56px !important;    /* room for the +/× */
     line-height: 1.15 !important;
   }
 
-  /* VISUAL ICON lives on the anchor (always aligned) */
-  .stellarnav li.has-sub > a:after {
-    content: "+" !important;
-    position: absolute !important;
-    right: 16px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: 26px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    color: #ebb017 !important;              /* your triangle yellow */
+  /* 1) SHOW the plugin's toggle again and let it render its own icon */
+  .stellarnav li.has-sub > .dd-toggle {
     display: inline-block !important;
-    pointer-events: none !important;        /* clicks pass through */
-  }
-  /* when open -> × */
-  .stellarnav li.has-sub.open > a:after,
-  .stellarnav li.has-sub.active > a:after {
-    content: "×" !important;
-  }
-
-  /* CLICK TARGET (.dd-toggle) sits invisibly over the icon */
-  .stellarnav li.has-sub > .dd-toggle {
-    position: absolute !important;
-    right: 8px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 44px; height: 44px;              /* comfy tap area */
-    margin: 0 !important; padding: 0 !important;
+    position: static !important;       /* no absolute positioning */
+    float: right !important;           /* park at right on the same row */
+    margin: 0 16px 0 8px !important;   /* a little breathing room */
+    padding: 0 !important;
     background: transparent !important;
-    border: 0 !important; box-shadow: none !important;
-    opacity: 0 !important;                  /* invisible, but... */
-    pointer-events: auto !important;        /* ...still clickable */
-    z-index: 2 !important;
-  }
-
-  /* Hide any built-in visuals inside the toggle (SVG, chevrons, etc.) */
-  .stellarnav li.has-sub > .dd-toggle svg,
-  .stellarnav li.has-sub > .dd-toggle i,
-  .stellarnav li.has-sub > .dd-toggle span,
-  .stellarnav li.has-sub > .dd-toggle:before,
-  .stellarnav li.has-sub > .dd-toggle:after {
-    display: none !important;
-    content: none !important;
-  }
-}
-
-/* === MOBILE: make the right-side +/× reliably clickable === */
-@media (max-width: 991px) {
-  /* Anchor: centered label with room for icon; keep it below the toggle */
-  .stellarnav li.has-sub { position: relative !important; }
-  .stellarnav li.has-sub > a {
-    position: relative !important;
-    z-index: 1 !important;          /* below the toggle */
-    display: block !important;
-    text-align: center !important;
-    padding-right: 56px !important; /* space for icon/tap area */
-    line-height: 1.15 !important;
-  }
-
-  /* Visual icon stays on the anchor (already working) */
-  .stellarnav li.has-sub > a:after {
-    content: "+" !important;
-    position: absolute !important;
-    right: 16px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: 26px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    color: #ebb017 !important;
-    pointer-events: none !important; /* let clicks hit the toggle */
-  }
-  .stellarnav li.has-sub.open > a:after,
-  .stellarnav li.has-sub.active > a:after { content: "×" !important; }
-
-  /* Invisible CLICK TARGET on top of the icon */
-  .stellarnav li.has-sub > .dd-toggle {
-    position: absolute !important;
-    right: 8px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-
-    width: 44px; height: 44px;          /* comfy tap target */
-    margin: 0 !important; padding: 0 !important;
-    z-index: 2 !important;               /* above the link */
-    pointer-events: auto !important;
-
-    /* instead of opacity:0 (finicky on iOS), use a 0.001 alpha bg */
-    background: rgba(0,0,0,0.001) !important;
-    border: 0 !important; box-shadow: none !important;
+    border: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     text-indent: 0 !important;
   }
-
-  /* Hide any built-in visuals inside the toggle */
+  /* re-show any built-in glyph (svg/i/span) */
   .stellarnav li.has-sub > .dd-toggle svg,
   .stellarnav li.has-sub > .dd-toggle i,
-  .stellarnav li.has-sub > .dd-toggle span,
-  .stellarnav li.has-sub > .dd-toggle:before,
-  .stellarnav li.has-sub > .dd-toggle:after {
-    display: none !important;
+  .stellarnav li.has-sub > .dd-toggle span {
+    display: inline-block !important;
+  }
+
+  /* 2) REMOVE our custom icon on the link so only the plugin icon shows */
+  .stellarnav li.has-sub > a:before,
+  .stellarnav li.has-sub > a:after {
     content: none !important;
+    display: none !important;
+  }
+
+  /* 3) Keep the Publications submenu background yellow on mobile */
+  .main-menu ul.menu-list.responsive li.has-sub > ul > li > a {
+    background: var(--secondary-color) !important;  /* your yellow */
+    color: #053634 !important;                      /* dark green text */
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    padding: 12px 18px !important;
   }
 }
 
