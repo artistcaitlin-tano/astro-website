@@ -3337,9 +3337,16 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-
-
-
+/* === MOBILE ONLY: center footer image === */
+@media (max-width: 991px) {
+  footer img,
+  #footer img,
+  .site-footer img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 
 
 
