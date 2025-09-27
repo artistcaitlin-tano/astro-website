@@ -3218,33 +3218,36 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* === MOBILE ONLY: make the banner photo full-bleed & sit higher === */
+/* === MOBILE ONLY: make banner photo full width & flush top === */
 @media (max-width: 991px) {
-  /* remove side padding only for the image row inside the banner */
+  /* remove padding that holds the image in */
   #billboard .container,
   #billboard .banner-content {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin: 0 !important;
   }
 
-  /* catch the banner image no matter which class the template used */
+  /* target the banner image */
+  #billboard img,
   #billboard .banner-element img,
-  #billboard .banner-image,
-  #billboard img {
+  #billboard .banner-image {
     display: block;
-    width: 100vw !important;          /* full device width */
+    width: 100vw !important;             /* span full screen */
     max-width: none !important;
-    height: auto;
-    /* center the image while escaping the container’s padding */
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-
-    margin-top: 0 !important;         /* pull it up */
+    height: auto !important;
+    object-fit: cover;                   /* crop if needed */
+    margin-left: calc(50% - 50vw) !important; /* break out of container */
+    margin-top: 0 !important;            /* remove space above */
   }
 
-  /* if a wrapper around the image has top spacing, kill it on mobile */
-  #billboard .banner-element { margin-top: 0 !important; }
+  /* kill any wrapper spacing on mobile */
+  #billboard .banner-element {
+    margin-top: 0 !important;
+  }
 }
+
+
 
 
 
