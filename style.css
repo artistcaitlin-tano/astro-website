@@ -3350,45 +3350,33 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
-/* === MOBILE ONLY — Posters page: reposition marker icon + text === */
+/* === MOBILE ONLY — posters page: marker top-right, icon left of text === */
 @media (max-width: 991px) {
-  /* Make the overlay the positioning context and ensure nothing clips it */
-  section#billboard.billboard-posters .image-overlay {
-    position: relative !important;
-    overflow: visible !important;
-    z-index: 5 !important;
-  }
+  /* Make the whole billboard a positioning context */
+  section#billboard.billboard-posters { position: relative !important; }
 
-  /* Reset any previous offsets so ours win */
-  section#billboard.billboard-posters .marker-icon,
-  section#billboard.billboard-posters .marker-text {
+  /* Park the overlay (icon + text) at the top-right of the photo */
+  section#billboard.billboard-posters .image-overlay {
     position: absolute !important;
+    top: 10px !important;              /* tweak up/down */
+    right: 16px !important;            /* tweak inset from edge */
     left: auto !important;
     bottom: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
     z-index: 10 !important;
+
+    display: inline-flex !important;   /* keep [icon][text] on one row */
+    align-items: center !important;
+    gap: 8px !important;               /* space between icon and text */
   }
 
-  /* Place the icon (adjust top value to taste) */
-  section#billboard.billboard-posters .marker-icon {
-    top: 28px !important;          /* ↓ move DOWN by increasing this */
-    right: 16px !important;
-    width: 22px !important;        /* match your icon size */
-    height: auto !important;
-  }
-
-  /* Place the text on the same row, just to the left of the icon */
+  /* Let the children flow naturally in that row (icon then text) */
+  section#billboard.billboard-posters .marker-icon,
   section#billboard.billboard-posters .marker-text {
-    top: 30px !important;          /* small baseline tweak vs. icon */
-    right: calc(16px + 22px + 8px) !important;  /* edge + icon width + gap */
-    white-space: nowrap !important;
+    position: static !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 }
-
-
 
 
 
