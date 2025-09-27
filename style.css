@@ -3261,14 +3261,23 @@ body.no-scroll { overflow: auto !important; }
     margin-top: 0.5em !important;  /* adjust: 0em, 0.25em, 0.5em */
   }
 }
-/* === MOBILE ONLY: lift marker icon + text above the photo === */
+
+/* === MOBILE ONLY: lift marker + text together === */
 @media (max-width: 991px) {
+  #billboard .image-overlay {
+    position: relative !important;
+    top: -2em !important;   /* adjust up as a group */
+  }
+
+  /* reset any extra offsets on children so they stay aligned */
   #billboard .marker-icon,
   #billboard .marker-text {
-    position: relative !important;
-    top: -2em !important;   /* adjust as needed */
+    top: 0 !important;
+    margin: 0 !important;
   }
 }
+
+
 
 
 
