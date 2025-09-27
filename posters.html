@@ -17,45 +17,6 @@
 
   <script src="js/modernizr.js"></script>
 </head>
-<style>
-/* HAMBURGER: draw 3 bars and morph to X (mobile only) */
-#header .hamburger{
-  position:relative; width:34px; height:26px; margin-left:auto; cursor:pointer; z-index:3001;
-  background-image:linear-gradient(var(--accent-color),var(--accent-color));
-  background-repeat:no-repeat; background-position:center; background-size:100% 3px;
-  transition:background-size .2s ease;
-}
-#header .hamburger::before,#header .hamburger::after{
-  content:""; position:absolute; left:0; right:0; height:3px; background:var(--accent-color);
-  transition:transform .25s ease, top .25s ease;
-}
-#header .hamburger::before{ top:0; }
-#header .hamburger::after { top:22px; }
-#header .hamburger.active{ background-size:0 3px; }
-#header .hamburger.active::before{ top:50%; transform:translateY(-50%) rotate(45deg); }
-#header .hamburger.active::after { top:50%; transform:translateY(-50%) rotate(-45deg); }
-
-/* Hide hamburger on desktop; show menu only when toggled on mobile */
-@media (min-width:992px){ #header .hamburger{ display:none!important; } }
-@media (max-width:991px){
-  #navbar .menu-list{ display:none; }
-  #navbar .menu-list.responsive{ display:block; }
-}
-</style>
-<script>
-(function(){
-  var burger = document.getElementById('hamburger');
-  var menu = document.querySelector('#navbar .menu-list');
-  if(!burger || !menu) return;
-  burger.addEventListener('click', function(e){
-    e.preventDefault();
-    burger.classList.toggle('active');
-    menu.classList.toggle('responsive');
-    document.body.classList.toggle('menu-open');
-  });
-})();
-</script>
-
 <body class="bg-body">
 
 <header id="header">
@@ -199,6 +160,7 @@
 </body>
 
 </html> 
+
 
 
 
