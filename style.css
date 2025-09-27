@@ -3179,11 +3179,11 @@ body.no-scroll { overflow: auto !important; }
     position: relative;
     /* adjust this until it visually matches the Publications header */
     padding-left: 2em !important;   /* ← try 36px; tweak +/− to align */
-    padding-right: 15px !important;
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1140px;
   }
 }
+
 
 
