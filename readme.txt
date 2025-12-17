@@ -1,3 +1,7 @@
+https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcaitlin-bell.com&label=astro-web&icon=stars&color=%23a98eda&message=&style=for-the-badge&tz=UTC
+![Badge](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcaitlin-bell.com&label=astro-web&icon=stars&color=%23a98eda&message=&style=for-the-badge&tz=UTC)
+<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcaitlin-bell.com&label=astro-web&icon=stars&color=%23a98eda&message=&style=for-the-badge&tz=UTC">
+
 It is a free HTML CSS template by https://templatesjungle.com/
 
 You can use this template as a starter template and start building as you require.
@@ -70,5 +74,6 @@ Swiper Slider - https://swiperjs.com/
 Chocolat.js – a Free Lightbox Plugin -http://chocolat.insipi.de/
 
 Thanks for downloading from TemplatesJungle.com !
+
 
 
