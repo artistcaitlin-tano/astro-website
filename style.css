@@ -3446,22 +3446,28 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+/* allow photo positioning relative to text box */
+.banner-element{
+  position:relative;
+}
 
-/* Profile photo on banner */
-
+/* profile photo */
 .profile-photo{
-  width:180px;
-  height:180px;
-  object-fit:cover;
-  border-radius:50%;
-  border:5px solid white;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-
   position:absolute;
-  right:-90px;   /* pushes it toward the banner image */
+
+  right:-120px;   /* pushes it into the banner image */
   top:50%;
   transform:translateY(-50%);
-  z-index:5;
+
+  width:200px;
+  height:200px;
+  object-fit:cover;
+
+  border-radius:50%;
+  border:6px solid white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+  z-index:10;
 }
 
 
