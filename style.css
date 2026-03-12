@@ -3510,3 +3510,21 @@ body.no-scroll { overflow: auto !important; }
   border: 6px solid white !important;
   z-index: 9999 !important;
 }
+
+#billboard {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+#billboard .profile-photo {
+  position: absolute !important;
+  top: 50% !important;
+  left: 40% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 260px !important;
+  height: 260px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 6px solid white !important;
+  z-index: 9999 !important;
+}
