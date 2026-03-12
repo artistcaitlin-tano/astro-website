@@ -3446,28 +3446,21 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* anchor banner content */
-.banner-content{
-  position:relative;
+.banner-content {
+  position: relative;
 }
 
-/* profile image overlapping banner */
-.profile-photo{
-  position:absolute !important;
-
-  right:-2000px;
-  top:50%;
-  transform:translateY(-50%);
-
-  width:200px;
-  height:200px;
-  object-fit:cover;
-
-  border-radius:50%;
-  border:6px solid white;
-  box-shadow:0 10px 25px rgba(0,0,0,0.25);
-
-  z-index:20;
+.profile-photo {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid white;
+  z-index: 10;
 }
 
 
