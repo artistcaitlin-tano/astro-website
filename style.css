@@ -3446,37 +3446,48 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+
+
+/* ===== FINAL billboard/profile-photo override ===== */
 #billboard {
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;   /* important */
-  align-items: stretch;
-  overflow: visible;
+  position: relative !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  overflow: visible !important;
 }
 
 #billboard .banner-content {
-  flex: 0 0 40%;
-  position: relative;
-  z-index: 2;
+  flex: 0 0 40% !important;
+  max-width: 40% !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 #billboard .banner-holder {
-  flex: 0 0 60%;
-  position: relative;
-  z-index: 1;
+  flex: 0 0 60% !important;
+  max-width: 60% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+#billboard .banner-holder .banner-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 
 #billboard .profile-photo {
   position: absolute !important;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid white;
-  z-index: 50;
-  display: block;
+  top: 50% !important;
+  left: 40% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 6px solid #fff !important;
+  z-index: 999 !important;
+  display: block !important;
 }
-
