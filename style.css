@@ -3446,16 +3446,16 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-/* allow photo positioning relative to text box */
-.banner-element{
+/* anchor banner content */
+.banner-content{
   position:relative;
 }
 
-/* profile photo */
+/* profile image overlapping banner */
 .profile-photo{
-  position:absolute;
+  position:absolute !important;
 
-  right:-120px;   /* pushes it into the banner image */
+  right:-120px;
   top:50%;
   transform:translateY(-50%);
 
@@ -3467,7 +3467,7 @@ body.no-scroll { overflow: auto !important; }
   border:6px solid white;
   box-shadow:0 10px 25px rgba(0,0,0,0.25);
 
-  z-index:10;
+  z-index:20;
 }
 
 
