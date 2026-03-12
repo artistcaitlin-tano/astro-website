@@ -3455,7 +3455,7 @@ body.no-scroll { overflow: auto !important; }
 .profile-photo{
   position:absolute !important;
 
-  right:-120px;
+  right:-2000px;
   top:50%;
   transform:translateY(-50%);
 
@@ -3469,6 +3469,7 @@ body.no-scroll { overflow: auto !important; }
 
   z-index:20;
 }
+
 
 
 
