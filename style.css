@@ -3446,31 +3446,28 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-
 #billboard {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;   /* important */
   align-items: stretch;
-  min-height: 400px;
   overflow: visible;
 }
 
 #billboard .banner-content {
   flex: 0 0 40%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 #billboard .banner-holder {
   flex: 0 0 60%;
   position: relative;
+  z-index: 1;
 }
 
 #billboard .profile-photo {
-  position: absolute;
+  position: absolute !important;
   top: 50%;
   left: 40%;
   transform: translate(-50%, -50%);
@@ -3480,4 +3477,6 @@ body.no-scroll { overflow: auto !important; }
   border-radius: 50%;
   border: 6px solid white;
   z-index: 50;
+  display: block;
 }
+
