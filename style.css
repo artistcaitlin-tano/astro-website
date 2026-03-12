@@ -3539,3 +3539,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+a.btn:hover,
+.view-btn:hover,
+.orcid-btn:hover,
+.nav-link:hover {
+  text-decoration: none !important;
+}
