@@ -3447,6 +3447,22 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
+/* Profile photo on banner */
+
+.profile-photo{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:50%;
+  border:5px solid white;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+  position:absolute;
+  right:-90px;   /* pushes it toward the banner image */
+  top:50%;
+  transform:translateY(-50%);
+  z-index:5;
+}
 
 
 
