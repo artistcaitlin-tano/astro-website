@@ -3530,6 +3530,12 @@ body.no-scroll { overflow: auto !important; }
 }
 
 
-body {
-  outline: 8px solid red !important;
+a {
+  color: #2c7be5;        /* link color */
+  text-decoration: none; /* remove underline */
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
 }
