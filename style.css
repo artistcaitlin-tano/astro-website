@@ -155,7 +155,7 @@ a {
   transition: 0.3s color ease-out;
 }
 a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 ul, ol {
   margin-top: 0;
@@ -3528,3 +3528,4 @@ body.no-scroll { overflow: auto !important; }
   border: 6px solid white !important;
   z-index: 9999 !important;
 }
+
