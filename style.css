@@ -3446,25 +3446,23 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
+#billboard .profile-photo{
+  position:absolute !important;
+  right:-140px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+
+  width:200px;
+  height:200px;
+  object-fit:cover;
+
+  border-radius:50%;
+  border:6px solid white;
+
+  z-index:50;
+}
+
 #billboard .banner-element{
-  position: relative;
+  position:relative !important;
 }
-
-#billboard .banner-element .profile-photo{
-  position: absolute;
-  right: -140px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid white;
-  z-index: 20;
-}
-
-
-
-
-
 
