@@ -3446,24 +3446,19 @@ body.no-scroll { overflow: auto !important; }
   }
 }
 
-.banner-content {
-  position: relative;
-}
-
-.profile-photo {
-  position: absolute;
-  right: -120px;
-  top: 50%;
-  transform: translateY(-50%);
+.profile-photo{
+  float: right;
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid white;
+  margin-left: 20px;
+  margin-right: -120px; /* pushes it into the banner image area */
+  margin-top: -20px;
+  position: relative;
   z-index: 10;
 }
-
-
 
 
 
