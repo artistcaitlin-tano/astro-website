@@ -3528,3 +3528,8 @@ body.no-scroll { overflow: auto !important; }
   border: 6px solid white !important;
   z-index: 9999 !important;
 }
+
+
+body {
+  outline: 10px solid red !important;
+}
