@@ -3449,30 +3449,35 @@ body.no-scroll { overflow: auto !important; }
 
 #billboard {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 400px;
   overflow: visible;
 }
 
 #billboard .banner-content {
-  position: relative;
-  z-index: 2;
-  overflow: visible;
+  flex: 0 0 40%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #billboard .banner-holder {
+  flex: 0 0 60%;
   position: relative;
-  z-index: 1;
 }
 
 #billboard .profile-photo {
   position: absolute;
   top: 50%;
-  right: -100px; /* tweak */
-  transform: translateY(-50%);
+  left: 40%;
+  transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid white;
-  z-index: 10;
+  z-index: 50;
 }
-
