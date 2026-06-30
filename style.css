@@ -1558,6 +1558,9 @@ header .hamburger .bar {
 
 #billboard .banner-element p {
   text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  line-height: 1.6;
 }
 
 .banner-content h2.banner-title {
