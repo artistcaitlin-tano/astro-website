@@ -1564,7 +1564,7 @@ header .hamburger .bar {
 }
 
 .banner-content h2.banner-title {
-  font-size: 3.8em;
+  font-size: 3em;
   line-height: 1.2;
   font-weight: 600;
   color: #053634;
@@ -2462,7 +2462,7 @@ body.no-scroll {
   }
 
   #billboard .banner-title {
-    font-size: 34px;
+    font-size: 36px;
     line-height: 1.1;
   }
 }
