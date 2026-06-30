@@ -3144,11 +3144,13 @@ body.no-scroll {
 
 #billboard .photo-wrap-space {
   float: right;
-  width: 260px;
+  width: 460px;              /* 260px circle + 200px pushed outside */
   height: 260px;
+
   margin-top: 35px;
-  margin-right: -239px;
+  margin-right: -200px;
   margin-left: 20px;
-  shape-outside: circle(150px at 85% 60%);
+
+  shape-outside: circle(130px at 330px 60%);
   shape-margin: 8px;
 }
