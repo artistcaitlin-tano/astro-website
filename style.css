@@ -1553,7 +1553,7 @@ header .hamburger .bar {
 }
 
 #billboard .banner-element {
-  width: 80%;
+  width: 100%;
   padding-left: 2em
 }
 
@@ -3140,4 +3140,12 @@ body.no-scroll {
   border: 6px solid white !important;
   z-index: 9999 !important;
   display: block !important;
+}
+
+#billboard .photo-wrap-space {
+  float: right;
+  width: 150px;
+  height: 280px;
+  shape-outside: circle(140px at 100% 50%);
+  margin-left: 25px;
 }
