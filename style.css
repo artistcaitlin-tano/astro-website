@@ -3147,5 +3147,7 @@ body.no-scroll {
   width: 150px;
   height: 260px;
   margin-right: -10%;
+  margin-top: 35px;
+  margin-left: 20px;
   shape-outside: circle(150px at 100% 50%);
 }
