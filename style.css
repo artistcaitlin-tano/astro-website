@@ -1556,6 +1556,10 @@ header .hamburger .bar {
   width: 80%;
 }
 
+#billboard .banner-element p {
+  text-align: justify;
+}
+
 .banner-content h2.banner-title {
   font-size: 3.8em;
   line-height: 1.2;
