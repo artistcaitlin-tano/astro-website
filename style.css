@@ -3123,7 +3123,7 @@ body.no-scroll {
 #billboard .profile-photo {
   position: absolute !important;
   top: 50% !important;
-  left: 55% !important;
+  left: 100% !important;
   transform: translate(-50%, -50%) !important;
   width: 260px !important;
   height: 260px !important;
