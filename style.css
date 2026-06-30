@@ -1554,6 +1554,7 @@ header .hamburger .bar {
 
 #billboard .banner-element {
   width: 80%;
+  padding-left: 2em
 }
 
 #billboard .banner-element p {
