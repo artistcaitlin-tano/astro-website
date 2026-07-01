@@ -3221,18 +3221,6 @@ body.no-scroll {
   margin-left: 8px;
 }
 
-#publications .orcid-icon {
-  height: 22px;
-  width: auto;
-  vertical-align: middle;
-}
-
-#publications .orcid-btn {
-  display: inline-block;
-  margin-left: 8px;
-}
-
-
 /* Stack the columns on smaller screens */
 
 @media only screen and (max-width: 768px) {
