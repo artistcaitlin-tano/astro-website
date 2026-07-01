@@ -3179,3 +3179,69 @@ body.no-scroll {
 #header {
   display: none !important;
 }
+
+/* Publications two-column layout */
+
+#publications .publications-layout {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+#publications .publications-column {
+  flex: 1;
+  min-width: 0;
+}
+
+#publications .pub-citation {
+  line-height: 1.35;
+  margin: 0;
+}
+
+#publications .publication-entry {
+  margin-bottom: 28px;
+}
+
+#publications .publication-entry:last-child {
+  margin-bottom: 0;
+}
+
+#publications .poster-appearance {
+  margin-top: 14px;
+  line-height: 1.35;
+}
+
+#publications strong {
+  font-weight: 800;
+}
+
+#publications .view-btn {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+#publications .orcid-icon {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+}
+
+#publications .orcid-btn {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+
+/* Stack the columns on smaller screens */
+
+@media only screen and (max-width: 768px) {
+  #publications .publications-layout {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  #publications .publications-column {
+    width: 100%;
+  }
+}
