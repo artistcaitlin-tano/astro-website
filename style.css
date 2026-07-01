@@ -30,6 +30,15 @@ Version: 1.1
   --body-font: "Raleway", sans-serif;
   --heading-font: "Playfair Display", Georgia, serif;
 }
+:root {
+  --accent-color: #E6B84A;          /* existing golden yellow accents */
+  --secondary-color: #C9962E;       /* deeper gold for hover states */
+  --dark-color: #F1EDF7;            /* headings */
+  --body-text-color: #C9C4D4;       /* paragraph text */
+  --background-color: #111322;      /* main midnight background */
+  --light-accent-color: #77708C;     /* borders and muted details */
+  --light-background-color: #1B1C31; /* alternate sections/cards */
+}
 
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
