@@ -3128,18 +3128,21 @@ body.no-scroll {
   overflow: visible !important;
 }
 
+#billboard .profile-photo-position {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
 #billboard .profile-photo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 100% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 260px !important;
-  height: 260px !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  border: 6px solid white !important;
-  z-index: 9999 !important;
-  display: block !important;
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid white;
+  display: block;
 }
 
 #billboard .photo-wrap-space {
@@ -3147,7 +3150,7 @@ body.no-scroll {
   width: 460px;              /* 260px circle + 200px pushed outside */
   height: 260px;
 
-  margin-top: 20px;
+  margin-top: 15px;
   margin-right: -200px;
   margin-left: 20px;
 
