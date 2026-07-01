@@ -3155,3 +3155,7 @@ body.no-scroll {
   shape-outside: circle(130px at 330px 55%);
   shape-margin: 8px;
 }
+
+#header {
+  display: none !important;
+}
