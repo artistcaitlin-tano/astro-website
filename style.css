@@ -279,7 +279,7 @@ abbr {
 
 .text-lead strong {
   font-size: 115%;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .text-muted {
@@ -296,6 +296,11 @@ abbr {
   text-shadow: none;
   background-color: transparent;
   border: 0;
+}
+
+strong,
+b {
+  font-weight: 800;
 }
 
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
