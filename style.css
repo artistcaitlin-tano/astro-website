@@ -3234,5 +3234,58 @@ body.no-scroll {
   }
 }
 
+/*MOBILE*/
+/* About/banner layout for tablets and phones */
+@media only screen and (max-width: 900px) {
 
+  #billboard .banner-content {
+    width: 100% !important;
+    padding: 50px 24px !important;
+    margin: 0 !important;
+  }
 
+  #billboard .banner-element {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Remove the desktop-only invisible wrapping circle */
+  #billboard .photo-wrap-space {
+    display: none !important;
+  }
+
+  /* Put the photo back into normal page flow */
+  #billboard .profile-photo {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+
+    width: 220px !important;
+    height: 220px !important;
+    aspect-ratio: 1 / 1;
+
+    margin: 30px auto 0 !important;
+
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    box-sizing: border-box;
+    display: block !important;
+  }
+
+  #billboard .banner-element p {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    text-align: left !important;
+    line-height: 1.55;
+  }
+
+  #billboard .banner-title {
+    font-size: 2.5em;
+    line-height: 1.1;
+    margin-bottom: 25px;
+  }
+}
