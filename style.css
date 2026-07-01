@@ -3128,21 +3128,17 @@ body.no-scroll {
   overflow: visible !important;
 }
 
-#billboard .profile-photo-position {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
-
 #billboard .profile-photo {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid white;
-  display: block;
+  position: absolute !important;
+  top: 50% !important;
+  left: 100% !important;
+  width: 260px !important;
+  height: 260px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 6px solid white !important;
+  z-index: 9999 !important;
+  display: block !important;
 }
 
 #billboard .photo-wrap-space {
