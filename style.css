@@ -1577,7 +1577,7 @@ header .hamburger .bar {
   font-size: 2.5em;
   line-height: 1.2;
   font-weight: 600;
-  color: #053634;
+  color: var(--dark-color);
   text-transform: capitalize;
 }
 
