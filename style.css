@@ -1567,7 +1567,7 @@ header .hamburger .bar {
 }
 
 #billboard .banner-element {
-  width: 80%;
+  width: 90%;
   padding-left: 2em
 }
 
@@ -3154,7 +3154,7 @@ body.no-scroll {
   width: 260px;
   height: 260px;
 
-  margin: 0 -130px 20px 30px;
+  margin: 0 -160px 25px 25px;
 
   object-fit: cover;
   border-radius: 50%;
