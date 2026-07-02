@@ -3289,3 +3289,99 @@ body.no-scroll {
     margin-bottom: 25px;
   }
 }
+
+/* Hide the mobile-specific image area on desktop */
+#billboard .mobile-photo-area {
+  display: none;
+}
+
+
+/* Mobile About/Billboard layout */
+@media only screen and (max-width: 900px) {
+
+  #billboard {
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  /* Cerro Tololo image area */
+  #billboard .mobile-photo-area {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 105px;
+  }
+
+  #billboard .mobile-banner-photo {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  /* Circular photo overlapping the Cerro Tololo image */
+  #billboard .profile-photo {
+    position: absolute !important;
+    top: auto !important;
+    left: 50% !important;
+    bottom: -90px !important;
+
+    width: 190px !important;
+    height: 190px !important;
+
+    margin: 0 0 0 -95px !important;
+
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 6px solid #E6B84A !important;
+    box-sizing: border-box !important;
+
+    z-index: 10 !important;
+    display: block !important;
+  }
+
+  /* Remove the desktop circular text-wrapping spacer */
+  #billboard .photo-wrap-space {
+    display: none !important;
+  }
+
+  /* Text area below the images */
+  #billboard .banner-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 45px 24px 60px !important;
+    background-color: var(--background-color) !important;
+  }
+
+  #billboard .banner-element {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #billboard .banner-title {
+    margin: 0 0 22px !important;
+    font-size: 2.5em !important;
+    line-height: 1.1 !important;
+    text-align: center;
+    color: var(--dark-color);
+  }
+
+  #billboard .banner-element p {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+    text-align-last: auto !important;
+    line-height: 1.55 !important;
+    color: var(--body-text-color);
+  }
+
+  /* Hide the desktop decorative triangle on mobile */
+  #billboard .triangle-shape {
+    display: none !important;
+  }
+}
