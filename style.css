@@ -3154,14 +3154,14 @@ body.no-scroll {
   width: 260px;
   height: 260px;
 
-  margin: 0 -160px 25px 25px;
+  margin: 10 -170px 25px 25px;
 
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid #E6B84A;
   box-sizing: border-box;
 
-  shape-outside: circle(50%);
+  shape-outside: circle(50% at 25% 50%);
   shape-margin: 8px;
 
   display: block;
