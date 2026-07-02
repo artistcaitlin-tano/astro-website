@@ -3149,18 +3149,22 @@ body.no-scroll {
 }
 
 #billboard .profile-photo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 117% !important;
-  width: 260px !important;
-  height: 260px !important;
-  margin-left: -130px !important;
-  margin-top: -130px !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  border: 6px solid #E6B84A !important;
-  z-index: 9999 !important;
-  display: block !important;
+  float: right;
+
+  width: 260px;
+  height: 260px;
+
+  margin: 0 -130px 20px 30px;
+
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #E6B84A;
+  box-sizing: border-box;
+
+  shape-outside: circle(50%);
+  shape-margin: 8px;
+
+  display: block;
 }
 
 #billboard .photo-wrap-space {
