@@ -3153,8 +3153,7 @@ body.no-scroll {
 
   width: 260px;
   height: 260px;
-
-  margin: 0 -170px 25px 25px;
+  margin: 35px -140px 0 0;
 
   object-fit: cover;
   border-radius: 50%;
