@@ -3161,7 +3161,7 @@ body.no-scroll {
   border: 6px solid #E6B84A;
   box-sizing: border-box;
 
-  shape-outside: circle(50% at 25% 50%);
+  shape-outside: circle(130px at 330px 55%);
   shape-margin: 8px;
 
   display: block;
