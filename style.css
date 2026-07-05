@@ -3470,7 +3470,6 @@ body.no-scroll {
   #billboard .triangle-shape {
     display: none !important;
   }
-}
 
   /* Collapse the entire billboard into one full-width column */
   #billboard,
@@ -3502,6 +3501,7 @@ body.no-scroll {
     margin: 0 auto !important;
     padding: 0 !important;
   }
+}
 
 
 @media only screen and (max-width: 600px) {
