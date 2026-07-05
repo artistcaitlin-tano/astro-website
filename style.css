@@ -3683,3 +3683,41 @@ body.no-scroll {
     align-self: stretch !important;
   }
 }
+
+@media only screen and (max-width: 991px) {
+
+  /* Keep the yellow triangle visible */
+  #billboard .triangle-shape,
+  #billboard .triangle-shape.bottom-left {
+    display: block !important;
+  }
+
+  /* Keep the photo completely inside its circular border */
+  #billboard .profile-photo {
+    width: 210px !important;
+    height: 210px !important;
+    min-width: 210px !important;
+    min-height: 210px !important;
+    max-width: 210px !important;
+    max-height: 210px !important;
+
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+
+    border: 6px solid #E6B84A !important;
+    border-radius: 50% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    clip-path: circle(50% at 50% 50%);
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Reduce left padding from 2em to 1em */
+  #publications,
+  #talks {
+    padding-left: 1em !important;
+  }
+}
