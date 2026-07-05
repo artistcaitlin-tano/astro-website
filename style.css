@@ -3672,3 +3672,14 @@ body.no-scroll {
     box-sizing: border-box !important;
   }
 }
+
+@media only screen and (max-width: 991px) {
+  #billboard .banner-content h2.banner-title {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 22px 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    align-self: stretch !important;
+  }
+}
