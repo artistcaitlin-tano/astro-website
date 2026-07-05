@@ -3742,3 +3742,13 @@ body.no-scroll {
   }
 
 }
+
+@media only screen and (max-width: 991px) {
+
+  #talks .talk-citation {
+    margin-left: -1em !important;
+    width: calc(100% + 1em) !important;
+    max-width: calc(100% + 1em) !important;
+  }
+
+}
