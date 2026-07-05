@@ -3742,3 +3742,19 @@ body.no-scroll {
     padding-right: 0.2em !important;
   }
 }
+@media only screen and (max-width: 991px) {
+
+  #publications .pub-col .pub-item p.pub-citation,
+  #talks p.talk-citation {
+    position: relative !important;
+    left: -1em !important;
+
+    width: calc(100% + 1em) !important;
+    max-width: calc(100% + 1em) !important;
+
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+
+    box-sizing: border-box !important;
+  }
+}
