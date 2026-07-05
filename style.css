@@ -3220,7 +3220,7 @@ body.no-scroll {
 
 /* Stack the columns on smaller screens */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   #publications .publications-layout {
     flex-direction: column;
     gap: 45px;
@@ -3233,7 +3233,7 @@ body.no-scroll {
 
 /*MOBILE*/
 /* About/banner layout for tablets and phones */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991px) {
 
   #billboard .banner-content {
     width: 100% !important;
@@ -3294,7 +3294,7 @@ body.no-scroll {
 
 
 /* Mobile About/Billboard layout */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991px) {
 
   #billboard {
     display: block !important;
@@ -3388,7 +3388,7 @@ body.no-scroll {
 }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991px) {
 
   /* Hide the Cerro Tololo image on mobile */
   #billboard .banner-holder,
@@ -3500,7 +3500,7 @@ body.no-scroll {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   
   /* Completely remove the second desktop column/image */
   #billboard .banner-holder,
@@ -3554,7 +3554,7 @@ body.no-scroll {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991px) {
 
   /* Prevent the billboard from overflowing the screen */
   #billboard,
@@ -3623,7 +3623,7 @@ body.no-scroll {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991px) {
 
   #billboard,
   #billboard .slider-item,
