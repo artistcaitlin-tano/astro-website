@@ -3742,6 +3742,7 @@ body.no-scroll {
     padding-right: 0.2em !important;
   }
 }
+  
 @media only screen and (max-width: 991px) {
 
   #publications .pub-col .pub-item p.pub-citation,
