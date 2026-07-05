@@ -3471,3 +3471,86 @@ body.no-scroll {
     display: none !important;
   }
 }
+
+  /* Collapse the entire billboard into one full-width column */
+  #billboard,
+  #billboard .slider-item,
+  #billboard .banner-content,
+  #billboard .banner-element {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  #billboard .slider-item {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #billboard .banner-content {
+    flex: none !important;
+    margin: 0 !important;
+    padding: 45px 0 60px !important;
+  }
+
+  #billboard .banner-element {
+    align-items: center !important;
+    flex: none !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Completely remove the second desktop column/image */
+  #billboard .banner-holder,
+  #billboard .photo-wrap-space,
+  #billboard .image-overlay {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* Force a truly square image box, then round it */
+  #billboard .profile-photo {
+    position: static !important;
+    float: none !important;
+    flex: 0 0 210px !important;
+
+    width: 210px !important;
+    min-width: 210px !important;
+    max-width: 210px !important;
+
+    height: 210px !important;
+    min-height: 210px !important;
+    max-height: 210px !important;
+
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 auto 28px !important;
+
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 6px solid #E6B84A !important;
+    box-sizing: border-box !important;
+
+    display: block !important;
+  }
+
+  #billboard .banner-title {
+    width: 100% !important;
+    margin: 0 0 22px !important;
+    text-align: center !important;
+  }
+
+  #billboard .banner-element p {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+    text-align-last: left !important;
+    line-height: 1.55 !important;
+  }
+}
