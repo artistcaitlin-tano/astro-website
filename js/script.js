@@ -175,6 +175,12 @@ var initHamburgerMenu = function() {
     once: true,
   })
 
+  AOS.init({
+  duration: 1200,
+  once: true,
+  disable: false
+  });
+
   jQuery('.stellarnav').stellarNav({
     theme: 'plain',
     closingDelay: 250,
