@@ -3504,7 +3504,7 @@ body.no-scroll {
   }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
   
   /* Completely remove the second desktop column/image */
   #billboard .banner-holder,
