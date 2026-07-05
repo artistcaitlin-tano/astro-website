@@ -3732,3 +3732,13 @@ body.no-scroll {
     max-width: calc(100% + 1em) !important;
   }
 }
+
+@media only screen and (max-width: 991px) {
+
+  #publications .publications-column > .sub-title {
+    position: relative !important;
+    left: -1em !important;
+    width: calc(100% + 1em) !important;
+  }
+
+}
