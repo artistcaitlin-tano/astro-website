@@ -3777,3 +3777,18 @@ body.no-scroll {
     box-sizing: border-box !important;
   }
 }
+
+  @media only screen and (max-width: 991px) {
+
+  #publications .publications-column p {
+    position: relative !important;
+    left: -1em !important;
+
+    width: calc(100% + 1em) !important;
+    max-width: calc(100% + 1em) !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
