@@ -2912,11 +2912,7 @@ body.no-scroll {
     text-align: right !important;
     background: var(--background-color);
   }
-
-  #billboard .banner-content .banner-element {
-    transform: translateX(2em) !important;
-  }
-}
+]
 
 @media (max-width: 991px) {
   #billboard {
