@@ -2912,7 +2912,7 @@ body.no-scroll {
     text-align: right !important;
     background: var(--background-color);
   }
-]
+}
 
 @media (max-width: 991px) {
   #billboard {
