@@ -10,7 +10,7 @@ Version: 1.1
 /* Cleaned stylesheet: duplicate selectors are consolidated at their last occurrence; later declarations win. */
 /* Fixes applied: removed one stray closing brace and closed one unclosed mobile @media block. */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 991px) {
   :root {
     --header-height: 100px;
     --header-height-min: 80px;
@@ -1855,7 +1855,7 @@ header .hamburger .bar {
   background: var(--secondary-color);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #subscribe form#form {
     flex-wrap: wrap;
   }
