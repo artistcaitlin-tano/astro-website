@@ -3626,3 +3626,53 @@ body.no-scroll {
     overflow-wrap: break-word !important;
   }
 }
+
+@media only screen and (max-width: 900px) {
+
+  #billboard,
+  #billboard .slider-item,
+  #billboard .banner-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #billboard .banner-element {
+    width: calc(100% - 40px) !important;
+    max-width: calc(100% - 40px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  #billboard .profile-photo {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #billboard .banner-title {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  #billboard .banner-element p {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+
+    text-align: justify !important;
+    text-align-last: left !important;
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+  }
+}
