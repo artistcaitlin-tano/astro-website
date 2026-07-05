@@ -3656,9 +3656,7 @@ body.no-scroll {
     width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    text-align: left !important;
-    padding-left: 1em !important;
-    padding-right: 1em !important;
+    text-align: center !important;
   }
 
   #billboard .banner-element p {
@@ -3681,7 +3679,7 @@ body.no-scroll {
     width: 100% !important;
     margin: 0 0 22px 0 !important;
     padding: 0 !important;
-    text-align: left !important;
+    text-align: center !important;
     align-self: stretch !important;
   }
 }
