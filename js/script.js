@@ -10,7 +10,7 @@
 
       jQuery(window).scroll(function () {
 
-        if($(window).scrollTop() > 2000)
+        if($(window).scrollTop() > 1500)
           $('#scrollToTopBtn').addClass('active');
         else
           $('#scrollToTopBtn').removeClass('active');
