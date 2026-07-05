@@ -3715,9 +3715,20 @@ body.no-scroll {
     margin-right: auto !important;
   }
 
-  /* Reduce left padding from 2em to 1em */
-  #publications,
-  #talks {
+@media only screen and (max-width: 991px) {
+
+  /* Add 1em padding to both sides of the banner bio */
+  #billboard .banner-element p {
     padding-left: 1em !important;
+    padding-right: 1em !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reduce padding only on the citation text */
+  #publications .pub-citation,
+  #talks .talk-citation {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    box-sizing: border-box !important;
   }
 }
