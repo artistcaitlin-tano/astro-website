@@ -3557,3 +3557,72 @@ body.no-scroll {
     line-height: 1.55 !important;
   }
 }
+
+@media only screen and (max-width: 900px) {
+
+  /* Prevent the billboard from overflowing the screen */
+  #billboard,
+  #billboard .slider-item,
+  #billboard .banner-content,
+  #billboard .banner-element {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  #billboard {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  #billboard .slider-item {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #billboard .banner-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 45px 0 60px !important;
+  }
+
+  /* Center the entire photo/title/bio group */
+  #billboard .banner-element {
+    width: 90% !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    align-items: stretch !important;
+  }
+
+  /* Keep the profile photo centered */
+  #billboard .profile-photo {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Left-align the title */
+  #billboard .banner-title {
+    width: 100% !important;
+    margin: 0 0 22px !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Justify the bio paragraph */
+  #billboard .banner-element p {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: justify !important;
+    text-align-last: left !important;
+    text-justify: inter-word !important;
+
+    line-height: 1.55 !important;
+    overflow-wrap: break-word !important;
+  }
+}
