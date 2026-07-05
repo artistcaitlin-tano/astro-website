@@ -3738,7 +3738,7 @@ body.no-scroll {
   /* Reduce citation left padding by 1em: 1.25em → 0.25em */
   #publications .pub-col .pub-item p.pub-citation,
   #talks p.talk-citation {
-    padding-left: 0.25em !important;
-    padding-right: 0.25em !important;
+    padding-left: 0.2em !important;
+    padding-right: 0.2em !important;
   }
 }
