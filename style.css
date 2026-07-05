@@ -3717,79 +3717,18 @@ body.no-scroll {
 }
 
 @media only screen and (max-width: 991px) {
-
   /* Add 1em padding to both sides of the banner bio */
   #billboard .banner-element p {
     padding-left: 1em !important;
     padding-right: 1em !important;
     box-sizing: border-box !important;
   }
-
-  /* Reduce padding only on the citation text */
-  #publications .pub-citation,
-  #talks .talk-citation {
-    padding-left: 0.5em !important;
-    padding-right: 0.5em !important;
-    box-sizing: border-box !important;
-  }
 }
 
-@media only screen and (max-width: 991px) {
-
-  /* Reduce citation left padding by 1em: 1.25em → 0.25em */
-  #publications .pub-col .pub-item p.pub-citation,
-  #talks p.talk-citation {
-    padding-left: 0.2em !important;
-    padding-right: 0.2em !important;
-  }
-}
-  
-@media only screen and (max-width: 991px) {
-
-  #publications .pub-col .pub-item p.pub-citation,
-  #talks p.talk-citation {
-    position: relative !important;
-    left: -1em !important;
-
+ @media only screen and (max-width: 991px) {
+  #publications .pub-citation {
+    margin-left: -1em !important;
     width: calc(100% + 1em) !important;
     max-width: calc(100% + 1em) !important;
-
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-
-    box-sizing: border-box !important;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-
-  /* Move publication citation body text left */
-  #publications .pub-item > p,
-  #publications .publication-entry > p,
-  #publications p.pub-citation {
-    position: relative !important;
-    left: -1em !important;
-
-    width: calc(100% + 1em) !important;
-    max-width: calc(100% + 1em) !important;
-
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    box-sizing: border-box !important;
-  }
-}
-
-  @media only screen and (max-width: 991px) {
-
-  #publications .publications-column p {
-    position: relative !important;
-    left: -1em !important;
-
-    width: calc(100% + 1em) !important;
-    max-width: calc(100% + 1em) !important;
-
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    box-sizing: border-box !important;
   }
 }
